@@ -7,7 +7,7 @@
 }
 .row * {
     flex: 1; 
-    background-color: #345;
+    background-color: #c1580d;
     text-align: center;
 }
 .column{
@@ -83,4 +83,9 @@
     max-width: 125px;
     min-height: 125px;
     max-height: 125px;
+}
+ul{ 
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
