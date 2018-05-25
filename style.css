@@ -41,9 +41,16 @@
     box-shadow: 0px 0px 0px #000;
 }
 #sm, #med, #lg, #xlg{
-    background: url('img/pizzaSize.png') no-repeat fixed;
-    background-size: 100%;
+    position: relative;
+    text-align: center;
 }
-#sm{
-    height: 200px;
+#sm div, #med div, #lg div, #xlg div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+#sm img{ height: 50px;}
+#med img{ height: 75px;}
+#lg img{ height: 100px;}
+#xlg img{ height: 125px;}
