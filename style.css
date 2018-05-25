@@ -16,6 +16,7 @@
 }
 .column *{
     text-align: center;
+    align-self: center;
 }
 .leftSide{
     border-right: 1px dashed #000;
@@ -40,17 +41,46 @@
 .btn:active{
     box-shadow: 0px 0px 0px #000;
 }
-#sm, #med, #lg, #xlg{
-    position: relative;
+#sm, #med, #lg, #xl{
+    border: 1px solid #000;
+    border-radius: 50%;
     text-align: center;
+    vertical-align: middle;
+    margin-bottom: 2px;
 }
-#sm div, #med div, #lg div, #xlg div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#sm:hover, #med:hover, #lg:hover, #xl:hover{
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #000;
+    cursor: pointer;
 }
-#sm img{ height: 50px;}
-#med img{ height: 75px;}
-#lg img{ height: 100px;}
-#xlg img{ height: 125px;}
+#sm:active, #med:active, #lg:active, #xl:active{
+    box-shadow: 0px 0px 15px #000;
+}
+#sm{
+    line-height: 3;
+    min-width: 50px;
+    max-width: 50px;
+    min-height: 50px;
+    max-height: 50px;
+}
+#med{
+    line-height: 4.5;
+    min-width: 75px;
+    max-width: 75px;
+    min-height: 75px;
+    max-height: 75px;
+}
+#lg{
+    line-height: 6;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+}
+#xl{
+    line-height: 8;
+    min-width: 125px;
+    max-width: 125px;
+    min-height: 125px;
+    max-height: 125px;
+}
