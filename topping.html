@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="pizza">
+            <div class="column"><h1>Big Daddy's Pizza</h1></div>
+            <div class="row">
+                <!-- <div class="column">
+                    <h2>Toppings</h2>
+                    <div id="">Top</div>
+                </div> -->
+                <table>
+                    <caption>What toppings would you like?</caption>
+                    <tr>
+                        <th><div class="toppingOption"></div>Bacon</th>
+                        <td><select>
+                                <option value="" selected="selected">Full/Half</option>
+                                <option value="Full">Full</option>
+                                <option value="Left Half">Left Half</option>
+                                <option value="Right Half">Right Half</option>
+                        </select></td>
+                        <td><select>
+                                <option value="" selected="selected">Reg/Dble/Extra</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Double">Double</option>
+                                <option value="Extra">Extra</option>                                
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <th><div class="toppingOption"></div>Pepperoni</th>
+                        <td><select>
+                                <option value="" selected="selected">Full/Half</option>
+                                <option value="Full">Full</option>
+                                <option value="Left Half">Left Half</option>
+                                <option value="Right Half">Right Half</option>
+                        </select></td>
+                        <td><select>
+                                <option value="" selected="selected">Reg/Dble/Extra</option>
+                                <option value="Regular">Regular</option>
+                                <option value="Double">Double</option>
+                                <option value="Extra">Extra</option>                                
+                        </select></td>
+                    </tr>
+                </table>
+                <div class="divider"></div>
+                <div>
+                    <h2>Pizza</h2>
+                    <h3 id="price">Total: $0.00</h3>
+                    <canvas id="pizzaDisplay"></canvas>
+                    <div id="details">
+                        <h3>ORDER DETAILS</h3>
+                        <ul>
+                            <li id="sizeDtls">SIZE:</li>
+                            <li id="toppingsDtls">TOPPINGS:</li>
+                        </ul>
+                        <div id="toppingBtn" class="btn">Toppings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

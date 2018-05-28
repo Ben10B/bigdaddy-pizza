@@ -1,13 +1,17 @@
+body{
+    background-color: #FF6347;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
 .row {
     display: flex;
     flex-direction: row;
     padding: 1%; 
-    background-color: #000;
-    /* height: 90vh; */
+    color: #FF6347;
+    background-color: #FDE4A7;
 }
 .row * {
     flex: 1; 
-    background-color: #c1580d;
     text-align: center;
 }
 .column{
@@ -18,11 +22,13 @@
     text-align: center;
     align-self: center;
 }
-.leftSide{
-    border-right: 1px dashed #000;
-}
-.rightSide{
-    border-left: 1px dashed #000;
+.divider{ 
+    border: 1px solid #000;
+    max-height: 50vh;
+    min-height: 50vh;
+    flex: 0;
+    justify-self: center;
+    align-self: center;
 }
 .btn{
     background-color: #fff;
@@ -32,29 +38,44 @@
     width: 75px;
     height: 20px;
     text-align: center;
+    align-self: center;
     transition-property: border-radius;
     transition-duration: .5s;
 }
 .btn:hover{
     border-radius: 10px;
+    cursor: pointer;
 }
 .btn:active{
     box-shadow: 0px 0px 0px #000;
 }
-#sm, #med, #lg, #xl{
+#sm, #med, #lg, #xl, .toppingOption{
     border: 1px solid #000;
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
     margin-bottom: 2px;
+    transition: background-color .5s;
 }
-#sm:hover, #med:hover, #lg:hover, #xl:hover{
+#sm:hover, #med:hover, #lg:hover, #xl:hover, .toppingOption:hover{
     background-color: #fff;
     box-shadow: 0px 0px 5px #000;
     cursor: pointer;
 }
-#sm:active, #med:active, #lg:active, #xl:active{
+#sm:active, #med:active, #lg:active, #xl:active, .toppingOption:active{
     box-shadow: 0px 0px 15px #000;
+}
+.active{
+    background-color: #fff;
+    box-shadow: 0px 0px 15px #000;
+}
+.toppingOption{
+    min-width: 8px;
+    max-width: 8px;
+    min-height: 8px;
+    max-height: 8px;
+    margin: 0 1px 2px 0;
+    display: inline-table;
 }
 #sm{
     line-height: 3;
@@ -84,8 +105,13 @@
     min-height: 125px;
     max-height: 125px;
 }
+#details{
+    display: flex;
+    flex-direction: column;
+}
+#details div{ visibility: hidden; }
 ul{ 
     list-style-type: none;
-    margin: 0;
+    margin: 0 0 5%px 0;
     padding: 0;
 }
