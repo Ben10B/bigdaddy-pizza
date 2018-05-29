@@ -5,7 +5,7 @@ var sm = document.getElementById('sm');
 var med = document.getElementById('med');
 var lg = document.getElementById('lg');
 var xl = document.getElementById('xl');
-var price = document.getElementById('price');
+var priceDtls = document.getElementById('price');
 var sizeDtls = document.getElementById('sizeDtls');
 var toppings = document.getElementById('toppingsDtls');
 var nextBtn = document.getElementById('btn');
@@ -13,6 +13,7 @@ var nextBtn = document.getElementById('btn');
 var width = canvas.width;
 var height = canvas.height;
 var size = "";
+var price;
 
 if(sm !== null){
     sm.addEventListener('click', displaySize);
@@ -25,22 +26,23 @@ function displaySize(evt){
     ctx.clearRect(0,0,width,height);
 
     if(evt.srcElement.id === "sm"){
-        price.innerHTML = "Total: $7.99";
         sizeDtls.innerHTML = 'SIZE: Small 8"';
+        price = 7.99;
         bgSize = 50;
     }else if(evt.srcElement.id === "med"){
-        price.innerHTML = "Total: $9.99";
+        price = 9.99;
         sizeDtls.innerHTML = 'SIZE: Medium 10"';
         bgSize = 65;
     }else if(evt.srcElement.id === "lg"){
-        price.innerHTML = "Total: $12.99";
+        price = 12.99;
         sizeDtls.innerHTML = 'SIZE: Large 12"';
         bgSize = 100;
     }else if(evt.srcElement.id === "xl"){
-        price.innerHTML = "Total: $14.99";
+        price = 14.99;
         sizeDtls.innerHTML = 'SIZE: X-Large 14"';
         bgSize = 110;
     }
+    priceDtls.innerHTML = "Total: $"+price;
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
     canvas.style.backgroundSize = bgSize.toString()+"px"; 
@@ -54,24 +56,22 @@ drawPizzaSize();
 var bgSize;
 function drawPizzaSize(){
     size = "xl";
+    price = 14.99;
     ctx.clearRect(0,0,width,height);
     if(size === "sm"){
-        price.innerHTML = "Total: $7.99";
         sizeDtls.innerHTML = 'SIZE: Small 8"';
         bgSize = 50;
     }else if(size === "med"){
-        price.innerHTML = "Total: $9.99";
         sizeDtls.innerHTML = 'SIZE: Medium 10"';
         bgSize = 65;
     }else if(size === "lg"){
-        price.innerHTML = "Total: $12.99";
         sizeDtls.innerHTML = 'SIZE: Large 12"';
         bgSize = 100;
     }else if(size === "xl"){
-        price.innerHTML = "Total: $14.99";
         sizeDtls.innerHTML = 'SIZE: X-Large 14"';
         bgSize = 110;
     }
+    priceDtls.innerHTML = "Total: $"+price;
     canvas.style.background = "url(images/pizza/crust.png)";
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
@@ -86,7 +86,7 @@ for(i = 0; i < topWidth.length; i++){
     topWidth[i].addEventListener('click', changeImage);
 }
 
-bacon.addEventListener('click', addTopping, true);
+bacon.addEventListener('click', addTopping);
 pepperoni.addEventListener('click', addTopping);
 chicken.addEventListener('click', addTopping);
 ham.addEventListener('click', addTopping);
@@ -98,7 +98,7 @@ spinach.addEventListener('click', addTopping);
 sausage.addEventListener('click', addTopping);
 
 
-bacon.addEventListener('click', removeTopping, true);
+bacon.addEventListener('click', removeTopping);
 pepperoni.addEventListener('click', removeTopping);
 chicken.addEventListener('click', removeTopping);
 ham.addEventListener('click', removeTopping);
@@ -244,48 +244,46 @@ function addTopping(evt){
     if(evt.srcElement.id === "bacon" && evt.target.checked === true){
         topWidth[0].children[1].selected = true;
         toppingArray.push("url(images/pizza/bacon-full.png)");
-        toppingArrayDtls.push('Bacon');
+        toppingArrayDtls.push('Bacon');price += 1.00;
     } else if(evt.srcElement.id === "pepperoni" && evt.target.checked === true){
         topWidth[1].children[1].selected = true;
         toppingArray.push("url(images/pizza/pepperoni-full.png)");
-        toppingArrayDtls.push('Pepperoni');
+        toppingArrayDtls.push('Pepperoni');price += 1.00;
     }else if(evt.srcElement.id === "chicken" && evt.target.checked === true){
         topWidth[8].children[1].selected = true;
         toppingArray.push("url(images/pizza/chicken-full.png)");
-        toppingArrayDtls.push('Chicken');
+        toppingArrayDtls.push('Chicken');price += 1.00;
     }else if(evt.srcElement.id === "ham" && evt.target.checked === true){
         topWidth[6].children[1].selected = true;
         toppingArray.push("url(images/pizza/ham-full.png)");
-        toppingArrayDtls.push('Ham');
+        toppingArrayDtls.push('Ham');price += 1.00;
     }else if(evt.srcElement.id === "mushrooms" && evt.target.checked === true){
         topWidth[3].children[1].selected = true;
         toppingArray.push("url(images/pizza/mushrooms-full.png)");
-        toppingArrayDtls.push('Mushrooms');
+        toppingArrayDtls.push('Mushrooms');price += 1.00;
     }else if(evt.srcElement.id === "olives" && evt.target.checked === true){
         topWidth[5].children[1].selected = true;
         toppingArray.push("url(images/pizza/olives-full.png)");
-        toppingArrayDtls.push('Olives');
+        toppingArrayDtls.push('Olives');price += 1.00;
     }else if(evt.srcElement.id === "onion" && evt.target.checked === true){
         topWidth[9].children[1].selected = true;
         toppingArray.push("url(images/pizza/onion-full.png)");
-        toppingArrayDtls.push('Onion');
+        toppingArrayDtls.push('Onion');price += 1.00;
     }else if(evt.srcElement.id === "pineapple" && evt.target.checked === true){
         topWidth[2].children[1].selected = true;
         toppingArray.push("url(images/pizza/pineapple-full.png)");
-        toppingArrayDtls.push('Pineapple');
+        toppingArrayDtls.push('Pineapple');price += 1.00;
     }else if(evt.srcElement.id === "spinach" && evt.target.checked === true){
         topWidth[7].children[1].selected = true;
         toppingArray.push("url(images/pizza/spinach-full.png)");
-        toppingArrayDtls.push('Spinach');
+        toppingArrayDtls.push('Spinach');price += 1.00;
     }else if(evt.srcElement.id === "sausage" && evt.target.checked === true){
         topWidth[4].children[1].selected = true;
         toppingArray.push("url(images/pizza/sausage-full.png)");
-        toppingArrayDtls.push('Sausage');
+        toppingArrayDtls.push('Sausage');price += 1.00;
     }
     var str = "";
     var bgsize = "";
-    console.log(bgSize);
-    console.log(bgSize.toString());
     for(var i =0; i < toppingArray.length; i++){
         str += toppingArray[i]+", ";
         bgsize += (bgSize - 25)+"px, ";
@@ -296,46 +294,63 @@ function addTopping(evt){
             canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
         }
     }
-    console.log(canvas.style.backgroundSize);
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    
-    // details();
+    details();
 }
 function removeTopping(evt){
-    // canvas.style.background = "url(images/pizza/crust.png)";
     for(var i = toppingArray.length-1; i >= 0 ; i--){
         if(evt.srcElement.id === "bacon" && evt.target.checked === false){
             topWidth[0].children[0].selected = true;
             toppingArrayDtls.splice(i, 1);
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         } else if(evt.srcElement.id === "pepperoni" && evt.target.checked === false){
             topWidth[1].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "chicken" && evt.target.checked === false){
             topWidth[8].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "ham" && evt.target.checked === false){
             topWidth[6].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "mushrooms" && evt.target.checked === false){
             topWidth[3].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "olives" && evt.target.checked === false){
             topWidth[5].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "onion" && evt.target.checked === false){
             topWidth[9].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "pineapple" && evt.target.checked === false){
             topWidth[2].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "spinach" && evt.target.checked === false){
             topWidth[7].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }else if(evt.srcElement.id === "sausage" && evt.target.checked === false){
             topWidth[4].children[0].selected = true;
-            if(toppingArray[i].includes(evt.srcElement.id) === true) toppingArray.splice(i, 1);
+            if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
+                price -= 1;
+            }
         }
     }
     var str = "";
@@ -351,15 +366,17 @@ function removeTopping(evt){
         }
     }
     if(toppingArray.length === 0){
-        canvas.style.background = "";
+        canvas.style.background = "url(images/pizza/crust.png)";
+        canvas.style.backgroundSize = bgSize.toString()+"px";
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    // details();
+    
+    details();
 }
 function details(){
     var str = "";
-    price.innerHTML = "Total: $0.00";
+    priceDtls.innerHTML = "Total: $"+price.toFixed(2);
     sizeDtls.innerHTML = 'SIZE: "';
     toppings.innerHTML = "TOPPINGS: ";
     for(i = 0; i < toppingArray.length; i++){
