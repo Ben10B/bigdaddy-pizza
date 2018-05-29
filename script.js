@@ -23,61 +23,59 @@ if(sm !== null){
 }
 function displaySize(evt){
     ctx.clearRect(0,0,width,height);
-    ctx.strokeStyle = "rgb(0, 0, 0)";
-    ctx.beginPath();
+
     if(evt.srcElement.id === "sm"){
         price.innerHTML = "Total: $7.99";
         sizeDtls.innerHTML = 'SIZE: Small 8"';
-        ctx.ellipse((width/2), (height/2), 25, 25, 0, 0, 2 * Math.PI);
+        bgSize = 50;
     }else if(evt.srcElement.id === "med"){
         price.innerHTML = "Total: $9.99";
         sizeDtls.innerHTML = 'SIZE: Medium 10"';
-        ctx.ellipse((width/2), (height/2), 40, 40, 0, 0, 2 * Math.PI);
+        bgSize = 65;
     }else if(evt.srcElement.id === "lg"){
         price.innerHTML = "Total: $12.99";
         sizeDtls.innerHTML = 'SIZE: Large 12"';
-        ctx.ellipse((width/2), (height/2), 50, 50, 0, 0, 2 * Math.PI);
+        bgSize = 100;
     }else if(evt.srcElement.id === "xl"){
         price.innerHTML = "Total: $14.99";
         sizeDtls.innerHTML = 'SIZE: X-Large 14"';
-        ctx.ellipse((width/2), (height/2), 60, 60, 0, 0, 2 * Math.PI);
+        bgSize = 110;
     }
+    canvas.style.backgroundPosition = 'center';
+    canvas.style.backgroundRepeat = 'no-repeat';
+    canvas.style.backgroundSize = bgSize.toString()+"px"; 
     size = evt.srcElement.id;
-    ctx.stroke(); 
     nextBtn.style.visibility = "visible";
 }
 function nextPage(evt){
     window.location.href = "./topping.html";
 }
 drawPizzaSize();
+var bgSize;
 function drawPizzaSize(){
-    size = "lg";
+    size = "xl";
     ctx.clearRect(0,0,width,height);
-    canvas.style.background = "url(images/pizza/crust.png)";
-    ctx.strokeStyle = "rgb(0, 0, 0)";
-    ctx.beginPath();
     if(size === "sm"){
         price.innerHTML = "Total: $7.99";
         sizeDtls.innerHTML = 'SIZE: Small 8"';
-        ctx.ellipse((width/2), (height/2), 25, 25, 0, 0, 2 * Math.PI);
+        bgSize = 50;
     }else if(size === "med"){
         price.innerHTML = "Total: $9.99";
         sizeDtls.innerHTML = 'SIZE: Medium 10"';
-        ctx.ellipse((width/2), (height/2), 40, 40, 0, 0, 2 * Math.PI);
+        bgSize = 65;
     }else if(size === "lg"){
         price.innerHTML = "Total: $12.99";
         sizeDtls.innerHTML = 'SIZE: Large 12"';
-        ctx.ellipse((width/2), (height/2), 50, 50, 0, 0, 2 * Math.PI);
-        canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px'; 
+        bgSize = 100;
     }else if(size === "xl"){
         price.innerHTML = "Total: $14.99";
         sizeDtls.innerHTML = 'SIZE: X-Large 14"';
-        ctx.ellipse((width/2), (height/2), 60, 60, 0, 0, 2 * Math.PI);
+        bgSize = 110;
     }
-    ctx.stroke();
-    
+    canvas.style.background = "url(images/pizza/crust.png)";
+    canvas.style.backgroundPosition = 'center';
+    canvas.style.backgroundRepeat = 'no-repeat';
+    canvas.style.backgroundSize = bgSize.toString()+"px"; 
 }
 // Toppings Page
 var toppingArray = [];
@@ -112,7 +110,6 @@ spinach.addEventListener('click', removeTopping);
 sausage.addEventListener('click', removeTopping);
 
 function changeImage(evt){
-    canvas.style.background = "";
     for(i = 0; i < topWidth.length; i++){
         if(topWidth[0].value === "Left Half"){
             left('bacon');
@@ -187,7 +184,6 @@ function changeImage(evt){
     }
 }
 function full(top){
-    canvas.style.background = "";
     for(var i =0; i < toppingArray.length; i++){
         if(toppingArray[i].includes(top) === true){
             toppingArray[i] = toppingArray[i].replace("left", "full");
@@ -204,10 +200,9 @@ function full(top){
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px';
+    canvas.style.backgroundSize = bgSize;
 }
 function left(top){
-    canvas.style.background = "";
     for(var i =0; i < toppingArray.length; i++){
         if(toppingArray[i].includes(top) === true){
             toppingArray[i] = toppingArray[i].replace("full", "left");
@@ -224,10 +219,9 @@ function left(top){
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px';
+    canvas.style.backgroundSize = bgSize;
 }
 function right(top){
-    canvas.style.background = "";
     for(var i =0; i < toppingArray.length; i++){
         if(toppingArray[i].includes(top) === true){
             toppingArray[i] = toppingArray[i].replace("full", "right");
@@ -244,7 +238,7 @@ function right(top){
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px';
+    canvas.style.backgroundSize = bgSize;
 }
 function addTopping(evt){
     if(evt.srcElement.id === "bacon" && evt.target.checked === true){
@@ -289,19 +283,27 @@ function addTopping(evt){
         toppingArrayDtls.push('Sausage');
     }
     var str = "";
+    var bgsize = "";
+    console.log(bgSize);
+    console.log(bgSize.toString());
     for(var i =0; i < toppingArray.length; i++){
         str += toppingArray[i]+", ";
+        bgsize += (bgSize - 25)+"px, ";
         if(i == toppingArray.length-1){
             str = str.slice(0, -2);
-            canvas.style.background = str;
+            bgsize = bgsize.slice(0, -2);
+            canvas.style.background = str+", url(images/pizza/crust.png)";
+            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
         }
     }
+    console.log(canvas.style.backgroundSize);
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px';
+    
     // details();
 }
 function removeTopping(evt){
+    // canvas.style.background = "url(images/pizza/crust.png)";
     for(var i = toppingArray.length-1; i >= 0 ; i--){
         if(evt.srcElement.id === "bacon" && evt.target.checked === false){
             topWidth[0].children[0].selected = true;
@@ -337,11 +339,15 @@ function removeTopping(evt){
         }
     }
     var str = "";
+    var bgsize = "";
     for(var i =0; i < toppingArray.length; i++){
         str += toppingArray[i]+", ";
+        bgsize += (bgSize - 25)+"px, ";
         if(i == toppingArray.length-1){
             str = str.slice(0, -2);
-            canvas.style.background = str;
+            bgsize = bgsize.slice(0, -2);
+            canvas.style.background = str+", url(images/pizza/crust.png)";
+            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
         }
     }
     if(toppingArray.length === 0){
@@ -349,7 +355,6 @@ function removeTopping(evt){
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = '100px';
     // details();
 }
 function details(){
