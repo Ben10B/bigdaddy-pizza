@@ -8,17 +8,15 @@ var xl = document.getElementById('xl');
 var price = document.getElementById('price');
 var size = document.getElementById('sizeDtls');
 var nextBtn = document.getElementById('btn');
-var toppingBtn = document.getElementsByClassName('toppingOption')[0];
 
 var width = canvas.width;
 var height = canvas.height;
 
-// sm.addEventListener('click', displaySize);
-// med.addEventListener('click', displaySize);
-// lg.addEventListener('click', displaySize);
-// xl.addEventListener('click', displaySize);
-// nextBtn.addEventListener('click', nextPage);
-toppingBtn.addEventListener('click', topClicked);
+sm.addEventListener('click', displaySize);
+med.addEventListener('click', displaySize);
+lg.addEventListener('click', displaySize);
+xl.addEventListener('click', displaySize);
+nextBtn.addEventListener('click', nextPage);
 
 function displaySize(evt){
     ctx.clearRect(0,0,width,height);
@@ -46,9 +44,4 @@ function displaySize(evt){
 }
 function nextPage(evt){
     window.location.href = "./topping.html";
-}
-function topClicked(evt){
-    console.log(toppingBtn.className);    
-    toppingBtn.className += " active";
-    console.log(toppingBtn.className);
 }
