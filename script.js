@@ -90,46 +90,64 @@ function changeImage(evt){
             left('pepperoni');
         }else if(topWidth[1].value === "Right Half"){
             right('pepperoni');
+        }else if(topWidth[1].value === "Full"){
+            full('pepperoni');
         }
         if(topWidth[2].value === "Left Half"){
             left('pineapple');
         }else if(topWidth[2].value === "Right Half"){
             right('pineapple');
+        }else if(topWidth[2].value === "Full"){
+            full('pineapple');
         }
         if(topWidth[3].value === "Left Half"){
             left('mushrooms');
         }else if(topWidth[3].value === "Right Half"){
             right('mushrooms');
+        }else if(topWidth[3].value === "Full"){
+            full('mushrooms');
         }
         if(topWidth[4].value === "Left Half"){
             left('sausage');
         }else if(topWidth[4].value === "Right Half"){
             right('sausage');
+        }else if(topWidth[4].value === "Full"){
+            full('sausage');
         }
         if(topWidth[5].value === "Left Half"){
             left('olives');
         }else if(topWidth[5].value === "Right Half"){
             right('olives');
+        }else if(topWidth[5].value === "Full"){
+            full('olives');
         }
         if(topWidth[6].value === "Left Half"){
             left('ham');
         }else if(topWidth[6].value === "Right Half"){
             right('ham');
+        }else if(topWidth[6].value === "Full"){
+            full('ham');
         }
         if(topWidth[7].value === "Left Half"){
             left('spinach');
         }else if(topWidth[7].value === "Right Half"){
             right('spinach');
+        }else if(topWidth[7].value === "Full"){
+            full('spinach');
         }
         if(topWidth[8].value === "Left Half"){
             left('chicken');
         }else if(topWidth[8].value === "Right Half"){
             right('chicken');
+        }else if(topWidth[8].value === "Full"){
+            full('chicken');
         }
         if(topWidth[9].value === "Left Half"){
             left('onion');
         }else if(topWidth[9].value === "Right Half"){
             right('onion');
+        }else if(topWidth[9].value === "Full"){
+            full('onion');
         }
     }
 }
