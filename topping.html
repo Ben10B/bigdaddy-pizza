@@ -8,21 +8,32 @@
         <div class="pizza">
             <div class="column"><h1>Big Daddy's Pizza</h1></div>
             <div class="row">
-                <!-- <div class="column">
-                    <h2>Toppings</h2>
-                    <div id="">Top</div>
-                </div> -->
                 <table>
                     <caption><h2>What toppings would you like?</h2></caption>
                     <tr>
-                        <th><div class="toppingOption"></div>Bacon</th>
-                        <td><select name="">
+                        <th><input type="checkbox" id="bacon"></input>Bacon</th>
+                        <td><select class="topWidth">
+                            <option value="" selected="selected">Full/Half</option>
+                            <option value="Full">Full</option>
+                            <option value="Left Half">Left Half</option>
+                            <option value="Right Half">Right Half</option>
+                        </select></td>
+                        <td><select class="topAmount">
+                            <option value="" selected="selected">Reg/Dble/Extra</option>
+                            <option value="Regular">Regular</option>
+                            <option value="Double">Double</option>
+                            <option value="Extra">Extra</option>                                
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" id="pepperoni"></input>Pepperoni</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select name="">
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -30,14 +41,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Pepperoni</th>
-                        <td><select>
+                        <th><input type="checkbox" id="pineapple"></input>Pineapples</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -45,14 +56,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Pineapples</th>
-                        <td><select>
+                        <th><input type="checkbox" id="mushrooms"></input>Mushrooms</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -60,14 +71,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Mushrooms</th>
-                        <td><select>
+                        <th><input type="checkbox" id="sausage"></input>Sausage</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -75,14 +86,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Sausage</th>
-                        <td><select>
+                        <th><input type="checkbox" id="olives"></input>Olives</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -90,14 +101,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Olives</th>
-                        <td><select>
+                        <th><input type="checkbox" id="ham"></input>Ham</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -105,14 +116,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Ham</th>
-                        <td><select>
+                        <th><input type="checkbox" id="spinach"></input>Spinach</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -120,14 +131,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Bell Peppers</th>
-                        <td><select>
+                        <th><input type="checkbox" id="chicken"></input>Chicken</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
@@ -135,29 +146,14 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <th><div class="toppingOption"></div>Chicken</th>
-                        <td><select>
+                        <th><input type="checkbox" id="onion"></input>Onions</th>
+                        <td><select class="topWidth">
                                 <option value="" selected="selected">Full/Half</option>
                                 <option value="Full">Full</option>
                                 <option value="Left Half">Left Half</option>
                                 <option value="Right Half">Right Half</option>
                         </select></td>
-                        <td><select>
-                                <option value="" selected="selected">Reg/Dble/Extra</option>
-                                <option value="Regular">Regular</option>
-                                <option value="Double">Double</option>
-                                <option value="Extra">Extra</option>                                
-                        </select></td>
-                    </tr>
-                    <tr>
-                        <th><div class="toppingOption"></div>Onions</th>
-                        <td><select>
-                                <option value="" selected="selected">Full/Half</option>
-                                <option value="Full">Full</option>
-                                <option value="Left Half">Left Half</option>
-                                <option value="Right Half">Right Half</option>
-                        </select></td>
-                        <td><select>
+                        <td><select class="topAmount">
                                 <option value="" selected="selected">Reg/Dble/Extra</option>
                                 <option value="Regular">Regular</option>
                                 <option value="Double">Double</option>
