@@ -17,7 +17,9 @@ h1{
     font-family: 'Hind', sans-serif;
 
 }
-
+#pizzaDisplay{
+    height: 50vh;
+}
 
 /* start css */
 .center{
@@ -114,6 +116,7 @@ i.fa-arrow-left, i.fa-arrow-right{
     color:#Ec6c64;
     font-size:60px;
     transition: all .2s;
+    visibility: hidden;
 }
   
 .fa-arrow-left:hover, .fa-arrow-right:hover{
@@ -127,4 +130,45 @@ color:rgb(202, 55, 44);
     font-size:20px;
     box-sizing: border-box;
     margin-top:2%;
+}
+.tooltip {
+    position: relative;
+    text-align: center;
+    visibility: hidden;
+    color: #Ec6c64;
+    font-size:20px;
+    border:1px solid #Ec6c64;
+    width:50%;
+    margin: auto;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+table{
+    color: white;
+    width: 100%;
+}
+#details{ color: white;}
+ul{ 
+    list-style-type: none;
+    margin: 0 0 5% 0;
+    padding: 0;
 }

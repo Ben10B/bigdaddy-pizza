@@ -39,9 +39,16 @@
                 
             </div>
             <div class='col-l-6 center' id='carryout'>
-                <h1 class='center' id='total'>TOTAL: $0</h1>
+                <h1 class='center' id='price'>TOTAL: $0</h1>
                 <div class='row'>
-                    <div class='col-l-12' id='pizza-display'></div>
+                    <canvas class='col-l-12' id='pizzaDisplay'></canvas>
+                    <div class='col-l-12' id='details'>
+                        <h3>ORDER DETAILS</h3>
+                        <ul>
+                            <li id='sizeDtls'>SIZE:</li>
+                            <li id='toppingsDtls'>TOPPINGS:</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class='row'>
                     <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div>

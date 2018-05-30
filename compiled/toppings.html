@@ -16,15 +16,119 @@
         <div class='row fit'>
             <div class='col-l-6 center' id='delivery'>
                 <h1 class='center'>TOP IT UP:</h1>
+                <div class='tooltip'>SPECIAL DEAL!
+                    <span class='tooltiptext'>5 Toppings = $3.00</span>
+                </div>
                 <div class='m-auto' id='pizzaOptionsBox'>
-                    
+                    <div class='col-l-6 center'>
+                    <table>
+                        <tr>
+                            <th><input type='checkbox' id='bacon'></input>Bacon</th>
+                            <td><select class='topWidth'>
+                                <option value='' selected='selected'>Full/Half</option>
+                                <option value='Full'>Full</option>
+                                <option value='Left Half'>Left Half</option>
+                                <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='pepperoni'></input>Pepperoni</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='pineapple'></input>Pineapples</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='mushrooms'></input>Mushrooms</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='sausage'></input>Sausage</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='olives'></input>Olives</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='ham'></input>Ham</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='spinach'></input>Spinach</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='chicken'></input>Chicken</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                        <tr>
+                            <th><input type='checkbox' id='onion'></input>Onions</th>
+                            <td><select class='topWidth'>
+                                    <option value='' selected='selected'>Full/Half</option>
+                                    <option value='Full'>Full</option>
+                                    <option value='Left Half'>Left Half</option>
+                                    <option value='Right Half'>Right Half</option>
+                            </select></td>
+                        </tr>
+                    </table>
+                </div>
                 </div>
                 
             </div>
             <div class='col-l-6 center' id='carryout'>
-                <h1 class='center' id='total'>TOTAL: $0</h1>
+                <h1 class='center' id='price'>TOTAL: $0.00</h1>
                 <div class='row'>
-                    <div class='col-l-12' id='pizza-display'></div>
+                    <canvas id='pizzaDisplay'></canvas>
+                    <div class='col-l-12' id='details'>
+                        <h3>ORDER DETAILS</h3>
+                        <ul>
+                            <li id='sizeDtls'>SIZE:</li>
+                            <li id='toppingsDtls'>TOPPINGS:</li>
+                        </ul>
+                        <div class='button' id='checkout'>Add to Order</div>
+                    </div>
                 </div>
                 <div class='row'>
                     <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div>

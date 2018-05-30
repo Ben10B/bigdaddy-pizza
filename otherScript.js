@@ -26,6 +26,7 @@ if(sm !== null){
 }
 function displaySize(evt){
     ctx.clearRect(0,0,width,height);
+
     if(evt.srcElement.id === "sm"){
         sizeDtls.innerHTML = 'SIZE: Small 8"';
         price = 7.99;
