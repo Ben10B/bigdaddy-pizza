@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='defaults.css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300,700|Pacifico' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <title>Slice Pizzeria | Order Online</title>
+        <meta name='viewport' content='width=device-width'>
+    </head>
+
+    <body>
+        <div class='row fit'>
+            <img src='images/slice-logo3.png' class='brand-logo'/>
+        </div>
+        <div class='row fit'>
+            <div class='col-l-6 center' id='delivery'>
+                <h1 class='center'>SAUCE IT UP:</h1>
+                <div class='m-auto' id='pizzaOptionsBox'>
+                    <div class='row'>
+                        <div class='col-l-3'></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div>
+                        <div class='col-l-3'></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-l-3'></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div>
+                        <div class='col-l-3'></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-l-3'></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div>
+                        <div class='col-l-3'></div>
+                    </div>
+                    <div class='row arrows'>
+                        <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div>
+                    </div>  
+                </div>
+                
+            </div>
+            <div class='col-l-6 center' id='carryout'>
+                <h1 class='center' id='total'>TOTAL: $0</h1>
+                <div class='row'>
+                    <div class='col-l-12' id='pizza-display'></div>
+                </div>
+                <div class='row'>
+                    <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div>
+                </div>
+            </div>
+        </div>
+        <script src='script.js'></script>
+    </body>
+</html>

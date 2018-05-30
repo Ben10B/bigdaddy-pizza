@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='defaults.css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300,700|Pacifico' rel='stylesheet'>
+        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <title>Slice Pizzeria | Order Online</title>
+        <meta name='viewport' content='width=device-width'>
+    </head>
+
+    <body>
+        <div class='row fit'>
+            <img src='images/slice-logo3.png' class='brand-logo'/>
+        </div>
+        <div class='row fit'>
+            <div class='col-l-6 center' id='delivery'>
+                <h1 class='center'>PICK A PIZZA TO CUSTOMIZE:</h1>
+                <div class='m-auto' id='pizzaOptionsBox'>
+                    <div class='row'>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`custom`, this)' id='pizza-custom' class='pizza-option'>CUSTOM</h2></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`cheese`, this)' id='pizza-cheese' class='pizza-option'>CHEESE</h2></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`pepperoni`, this)' id='pizza-pepperoni' class='pizza-option'>PEPPERONI</h2></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`meat`, this)' id='pizza-meat' class='pizza-option'>MEAT-MANIA</h2></div>
+                    </div>
+                    <div class='row'>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`hawaiian`, this)' id='pizza-hawaiian'class='pizza-option'>HAWAIIAN</h2></div>
+                        <div class='col-l-6 center'><h2 onclick='setPizzaType(`alfredo`, this)' id='pizza-alfredo' class='pizza-option'>ALFREDO</h2></div>
+                    </div>
+                    <div class='row arrows'>
+                        <!-- <div class='col-l-6' onclick='prevPage()'><i class='fa fa-arrow-left'></i></div> -->
+                        <div class='col-l-12' onclick='loadSizes()'><i class='fa fa-arrow-right'></i></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class='col-l-6 center' id='carryout'>
+                <h1 class='center' id='total'>TOTAL: $0</h1>
+                <div class='row'>
+                    <div class='col-l-12' id='pizza-display'></div>
+                </div>
+                <div class='row'>
+                    <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div>
+                </div>
+            </div>
+        </div>
+        <script src='script.js'></script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='defaults.css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300,700|Pacifico' rel='stylesheet'>
+        <title>Slice Pizzeria | Order</title>
+        <meta name='viewport' content='width=device-width'>
+    </head>
+
+    <body>
+        <div class='row fit'>
+            <img src='images/slice-logo3.png' class='brand-logo'/>
+        </div>
+        <div class='row fit'>
+            <div class='col-l-6 center' id='delivery'>
+                <h1 class='center'>DELIVERY</h1>
+                <div id='address-form'>
+                    <input type='text' placeholder='Street'>
+                    <br>
+                    <input type='text' placeholder='Apt, Suite (optional)'>
+                    <br>
+                    <input type='text' placeholder='City'>
+                    <br>
+                    <input type='text' id='stateBox'placeholder='State'>
+                    <input type='text' id='zipBox' placeholder='Zip Code'>
+                </div>
+                <div class='button' onclick='startOrder()'>FIND STORE</div>
+            </div>
+            <div class='col-l-6 center' id='carryout'>
+                <h1 class='center'>CARRYOUT</h1>
+                <input type='text' id='zipBox' placeholder='Zip Code, City, or State'>
+                <div class='button' onclick='startOrder()'>FIND STORE</div>
+            </div>
+        </div>
+        <script src='script.js'></script>
+    </body>
+</html>
