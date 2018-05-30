@@ -1,6 +1,6 @@
 var canvas = document.getElementById('pizzaDisplay');
 var ctx = canvas.getContext('2d');
-
+//Sizes Page
 var sm = document.getElementById('sm');
 var med = document.getElementById('med');
 var lg = document.getElementById('lg');
@@ -22,7 +22,7 @@ if(sm !== null){
     med.addEventListener('click', displaySize);
     lg.addEventListener('click', displaySize);
     xl.addEventListener('click', displaySize);
-    nextBtn.addEventListener('click', nextPage);
+    nextBtn.addEventListener('click', toToppings);
 }
 function displaySize(evt){
     ctx.clearRect(0,0,width,height);
@@ -50,28 +50,32 @@ function displaySize(evt){
     size = evt.srcElement.id;
     nextBtn.style.visibility = "visible";
 }
-function nextPage(evt){
+function toToppings(evt){
     window.location.href = "./topping.html";
 }
 drawPizzaSize();
 function drawPizzaSize(){
     size = "xl";
+    var str = "";
     price = 14.99;
     ctx.clearRect(0,0,width,height);
     if(size === "sm"){
-        sizeDtls.innerHTML = 'SIZE: Small 8"';
+        str = 'Small 8"';
         bgSize = 60;
     }else if(size === "med"){
-        sizeDtls.innerHTML = 'SIZE: Medium 10"';
+        str = 'Medium 10"';
         bgSize = 75;
     }else if(size === "lg"){
-        sizeDtls.innerHTML = 'SIZE: Large 12"';
+        str = 'Large 12"';
         bgSize = 100;
     }else if(size === "xl"){
-        sizeDtls.innerHTML = 'SIZE: X-Large 14"';
+        str = 'X-Large 14"';
         bgSize = 110;
     }
-    priceDtls.innerHTML = "Total: $"+price;
+    if(document.getElementById(details) !== null){
+        sizeDtls.innerHTML = 'SIZE: '+str;
+        priceDtls.innerHTML = "Total: $"+price;
+    }
     canvas.style.background = "url(images/pizza/crust.png)";
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
@@ -80,35 +84,41 @@ function drawPizzaSize(){
 // Toppings Page
 var toppingArray = [];
 var toppingArrayDtls = [];
+var checkout = document.getElementById('checkout');
 
 var topWidth = document.getElementsByClassName('topWidth');
 for(i = 0; i < topWidth.length; i++){
     topWidth[i].addEventListener('click', changeImage);
 }
+if(checkout != null){
+    checkout.addEventListener('click', toCheckout);
+}
+var bacon = document.getElementById('bacon');
+var pepperoni = document.getElementById('pepperoni');
+var chicken = document.getElementById('chicken');
+var ham = document.getElementById('ham');
+var mushrooms = document.getElementById('mushrooms');
+var olives = document.getElementById('olives');
+var onion = document.getElementById('onion');
+var pineapple = document.getElementById('pineapple');
+var spinach = document.getElementById('spinach');
+var sausage = document.getElementById('sausage');
 
-bacon.addEventListener('click', addTopping);
-pepperoni.addEventListener('click', addTopping);
-chicken.addEventListener('click', addTopping);
-ham.addEventListener('click', addTopping);
-mushrooms.addEventListener('click', addTopping);
-olives.addEventListener('click', addTopping);
-onion.addEventListener('click', addTopping);
-pineapple.addEventListener('click', addTopping);
-spinach.addEventListener('click', addTopping);
-sausage.addEventListener('click', addTopping);
-
-
-bacon.addEventListener('click', removeTopping);
-pepperoni.addEventListener('click', removeTopping);
-chicken.addEventListener('click', removeTopping);
-ham.addEventListener('click', removeTopping);
-mushrooms.addEventListener('click', removeTopping);
-olives.addEventListener('click', removeTopping);
-onion.addEventListener('click', removeTopping);
-pineapple.addEventListener('click', removeTopping);
-spinach.addEventListener('click', removeTopping);
-sausage.addEventListener('click', removeTopping);
-
+if(bacon != null){
+    bacon.addEventListener('click', modifyTopping);
+    pepperoni.addEventListener('click', modifyTopping);
+    chicken.addEventListener('click', modifyTopping);
+    ham.addEventListener('click', modifyTopping);
+    mushrooms.addEventListener('click', modifyTopping);
+    olives.addEventListener('click', modifyTopping);
+    onion.addEventListener('click', modifyTopping);
+    pineapple.addEventListener('click', modifyTopping);
+    spinach.addEventListener('click', modifyTopping);
+    sausage.addEventListener('click', modifyTopping);
+}
+function toCheckout(evt){
+    window.location.href = "./checkout.html";
+}
 function changeImage(evt){
     for(i = 0; i < topWidth.length; i++){
         if(topWidth[0].value === "Left Half"){
@@ -248,6 +258,10 @@ function right(top){
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
+}
+function modifyTopping(evt){
+    if(evt.target.checked === true) addTopping(evt);
+    else removeTopping(evt);
 }
 function addTopping(evt){
     if(evt.srcElement.id === "bacon" && evt.target.checked === true){
@@ -393,7 +407,9 @@ function removeTopping(evt){
 }
 function details(){
     var str = "";
-    if(toppingArray.length === 1){ toppingPrice = 0; }
+    if(toppingArray.length === 1){ 
+        toppingPrice = 0; checkout.style.visibility = "visible";
+    }
     else if(toppingArray.length === 5){ 
         toppingPrice = 3; document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
     else{ document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden'; }
@@ -405,4 +421,18 @@ function details(){
         str += toppingArrayDtls[i]+", ";
     }
     toppings.innerHTML += str.slice(0, -2);
+}
+//Checkout Page
+var custom = document.getElementById('custom');
+var home = document.getElementById('home');
+if(custom != null && home != null){
+    custom.addEventListener('click', toCustom);
+    home.addEventListener('click', toIndex);
+}
+function toCustom(evt){
+    window.location.href = "./index.html";
+    console.log('hih');
+}
+function toIndex(evt){
+    window.location.href = "./index.html";
 }
