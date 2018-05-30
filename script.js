@@ -412,7 +412,9 @@ function details(){
     }
     else if(toppingArray.length === 5){ 
         toppingPrice = 3; document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
-    else{ document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden'; }
+    else{ document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden';
+        checkout.style.visibility = "hidden";
+    }
     if(toppingPrice < 0){ toppingPrice = 0; }
 
     priceDtls.innerHTML = "Total: $"+(price + toppingPrice).toFixed(2);
@@ -430,9 +432,25 @@ if(custom != null && home != null){
     home.addEventListener('click', toIndex);
 }
 function toCustom(evt){
-    window.location.href = "./index.html";
-    console.log('hih');
+    window.location.href = "./topping.html";
 }
 function toIndex(evt){
     window.location.href = "./index.html";
+}
+drawPizzaOnCheckout();
+function drawPizzaOnCheckout(){
+    var str = "";
+    var bgsize = "";
+    for(var i =0; i < toppingArray.length; i++){
+        str += toppingArray[i]+", ";
+        bgsize += (bgSize - 25)+"px, ";
+        if(i == toppingArray.length-1){
+            str = str.slice(0, -2);
+            bgsize = bgsize.slice(0, -2);
+            canvas.style.background = str+", url(images/pizza/crust.png)";
+            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
+        }
+    }
+    canvas.style.backgroundPosition = 'center';
+    canvas.style.backgroundRepeat = 'no-repeat';
 }
