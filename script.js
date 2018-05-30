@@ -394,7 +394,9 @@ function removeTopping(evt){
 function details(){
     var str = "";
     if(toppingArray.length === 1){ toppingPrice = 0; }
-    else if(toppingArray.length === 5){ toppingPrice = 3; }
+    else if(toppingArray.length === 5){ 
+        toppingPrice = 3; document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
+    else{ document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden'; }
     if(toppingPrice < 0){ toppingPrice = 0; }
 
     priceDtls.innerHTML = "Total: $"+(price + toppingPrice).toFixed(2);
