@@ -18,13 +18,13 @@ var toppingPrice = 0;
 var bgSize;
 
 if(sm !== null){
-    sm.addEventListener('click', displaySize);
-    med.addEventListener('click', displaySize);
-    lg.addEventListener('click', displaySize);
-    xl.addEventListener('click', displaySize);
+    sm.addEventListener('click', displaySizeClick);
+    med.addEventListener('click', displaySizeClick);
+    lg.addEventListener('click', displaySizeClick);
+    xl.addEventListener('click', displaySizeClick);
     nextBtn.addEventListener('click', toToppings);
 }
-function displaySize(evt){
+function displaySizeClick(evt){
     ctx.clearRect(0,0,width,height);
 
     if(evt.srcElement.id === "sm"){
@@ -54,8 +54,8 @@ function displaySize(evt){
 function toToppings(evt){
     window.location.href = "./topping.html";
 }
-drawPizzaSize();
-function drawPizzaSize(){
+setPizzaSize();
+function setPizzaSize(){
     size = "xl";
     var str = "";
     price = 14.99;
@@ -88,110 +88,83 @@ var toppingArrayDtls = [];
 var checkout = document.getElementById('checkout');
 
 var topWidth = document.getElementsByClassName('topWidth');
-for(i = 0; i < topWidth.length; i++){
-    topWidth[i].addEventListener('click', changeImage);
-}
+
 if(checkout != null){
     checkout.addEventListener('click', toCheckout);
 }
-var bacon = document.getElementById('bacon');
-var pepperoni = document.getElementById('pepperoni');
-var chicken = document.getElementById('chicken');
-var ham = document.getElementById('ham');
-var mushrooms = document.getElementById('mushrooms');
-var olives = document.getElementById('olives');
-var onion = document.getElementById('onion');
-var pineapple = document.getElementById('pineapple');
-var spinach = document.getElementById('spinach');
-var sausage = document.getElementById('sausage');
+var table = document.getElementById('tableContainer');
+var buttonNames = ["bacon", "pepperoni", "pineapple", "mushrooms", "sausage", "olives", "ham", "spinach", "chicken", "onion"];
+var buttons = [];
 
-if(bacon != null){
-    bacon.addEventListener('click', modifyTopping);
-    pepperoni.addEventListener('click', modifyTopping);
-    chicken.addEventListener('click', modifyTopping);
-    ham.addEventListener('click', modifyTopping);
-    mushrooms.addEventListener('click', modifyTopping);
-    olives.addEventListener('click', modifyTopping);
-    onion.addEventListener('click', modifyTopping);
-    pineapple.addEventListener('click', modifyTopping);
-    spinach.addEventListener('click', modifyTopping);
-    sausage.addEventListener('click', modifyTopping);
+buttonNames.forEach(buildTopping);
+function buildTopping(item, index, arr){
+    //Create table row and heading for button
+    var row = document.createElement('tr');
+    var heading = document.createElement('th');
+    heading.textContent = item.charAt(0).toUpperCase() + item.substring(1);
+    //Create topping button
+    buttons[index] = document.createElement('input');
+    buttons[index].id = item;
+    buttons[index].type = 'checkbox';
+    //Append button to table
+    heading.appendChild(buttons[index]);
+    row.appendChild(heading);
+    table.appendChild(row);
+    //Add event listener to button
+    buttons[index].addEventListener('click', toppingHandlerClick);
+    //Create table detail Full/Half dropdown
+    var td = document.createElement('td');
+    var select = document.createElement('select');
+    select.setAttribute('class', 'topWidth');
+    select.id = item;
+    var option1 = document.createElement('option');
+    option1.selected = true; option1.textContent = "Full/Half";
+    var option2 = document.createElement('option');
+    option2.value = "Full"; option2.textContent = "Full";
+    var option3 = document.createElement('option');
+    option3.value = "Left Half"; option3.textContent = "Left Half";
+    var option4 = document.createElement('option');
+    option4.value = "Right Half"; option4.textContent = "Right Half";
+    //Append dropdown to table
+    select.appendChild(option1);
+    select.appendChild(option2);
+    select.appendChild(option3);
+    select.appendChild(option4);
+    td.appendChild(select);
+    row.appendChild(td);
+    //Add event listener to dropdown
+    select.addEventListener('click', changeImageClick);
+    //Create table detail Regular/Extra dropdown
+    var tdA = document.createElement('td');
+    var selectA = document.createElement('select');
+    // selectA.setAttribute('class', 'topWidth');
+    selectA.id = item;
+    var optionA = document.createElement('option');
+    optionA.selected = true; optionA.textContent = "Reg/Extra";
+    var optionB = document.createElement('option');
+    optionB.value = "Regular"; optionB.textContent = "Regular";
+    var optionC = document.createElement('option');
+    optionC.value = "Extra"; optionC.textContent = "Extra";
+    //Append dropdown to table
+    selectA.appendChild(optionA);
+    selectA.appendChild(optionB);
+    selectA.appendChild(optionC);
+    tdA.appendChild(selectA);
+    row.appendChild(tdA);
+    //Add event listener to dropdown
+    // selectA.addEventListener('click', changeImageClick);
 }
+
 function toCheckout(evt){
     window.location.href = "./checkout.html";
 }
-function changeImage(evt){
-    for(i = 0; i < topWidth.length; i++){
-        if(topWidth[0].value === "Left Half"){
-            left('bacon');
-        }else if(topWidth[0].value === "Right Half"){
-            right('bacon');
-        }else if(topWidth[0].value === "Full"){
-            full('bacon');
-        }
-        if(topWidth[1].value === "Left Half"){
-            left('pepperoni');
-        }else if(topWidth[1].value === "Right Half"){
-            right('pepperoni');
-        }else if(topWidth[1].value === "Full"){
-            full('pepperoni');
-        }
-        if(topWidth[2].value === "Left Half"){
-            left('pineapple');
-        }else if(topWidth[2].value === "Right Half"){
-            right('pineapple');
-        }else if(topWidth[2].value === "Full"){
-            full('pineapple');
-        }
-        if(topWidth[3].value === "Left Half"){
-            left('mushrooms');
-        }else if(topWidth[3].value === "Right Half"){
-            right('mushrooms');
-        }else if(topWidth[3].value === "Full"){
-            full('mushrooms');
-        }
-        if(topWidth[4].value === "Left Half"){
-            left('sausage');
-        }else if(topWidth[4].value === "Right Half"){
-            right('sausage');
-        }else if(topWidth[4].value === "Full"){
-            full('sausage');
-        }
-        if(topWidth[5].value === "Left Half"){
-            left('olives');
-        }else if(topWidth[5].value === "Right Half"){
-            right('olives');
-        }else if(topWidth[5].value === "Full"){
-            full('olives');
-        }
-        if(topWidth[6].value === "Left Half"){
-            left('ham');
-        }else if(topWidth[6].value === "Right Half"){
-            right('ham');
-        }else if(topWidth[6].value === "Full"){
-            full('ham');
-        }
-        if(topWidth[7].value === "Left Half"){
-            left('spinach');
-        }else if(topWidth[7].value === "Right Half"){
-            right('spinach');
-        }else if(topWidth[7].value === "Full"){
-            full('spinach');
-        }
-        if(topWidth[8].value === "Left Half"){
-            left('chicken');
-        }else if(topWidth[8].value === "Right Half"){
-            right('chicken');
-        }else if(topWidth[8].value === "Full"){
-            full('chicken');
-        }
-        if(topWidth[9].value === "Left Half"){
-            left('onion');
-        }else if(topWidth[9].value === "Right Half"){
-            right('onion');
-        }else if(topWidth[9].value === "Full"){
-            full('onion');
-        }
+function changeImageClick(evt){
+    if(evt.target.value === "Left Half"){
+        left(evt.target.id);
+    }else if(evt.target.value === "Right Half"){
+        right(evt.target.id);
+    }else if(evt.target.value === "Full"){
+        full(evt.target.id);
     }
 }
 function full(top){
@@ -201,20 +174,7 @@ function full(top){
             toppingArray[i] = toppingArray[i].replace("right", "full");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
 function left(top){
     for(var i =0; i < toppingArray.length; i++){
@@ -223,20 +183,7 @@ function left(top){
             toppingArray[i] = toppingArray[i].replace("right", "left");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
 function right(top){
     for(var i =0; i < toppingArray.length; i++){
@@ -245,22 +192,9 @@ function right(top){
             toppingArray[i] = toppingArray[i].replace("left", "right");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
-function modifyTopping(evt){
+function toppingHandlerClick(evt){
     if(evt.target.checked === true) addTopping(evt);
     else removeTopping(evt);
 }
@@ -306,20 +240,7 @@ function addTopping(evt){
         toppingArray.push("url(images/pizza/sausage-full.png)");
         toppingArrayDtls.push('Sausage');toppingPrice += 1;
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
     details();
 }
 function removeTopping(evt){
@@ -386,24 +307,7 @@ function removeTopping(evt){
             }
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    if(toppingArray.length === 0){
-        canvas.style.background = "url(images/pizza/crust.png)";
-        canvas.style.backgroundSize = bgSize.toString()+"px";
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
     details();
 }
 function details(){
@@ -438,8 +342,8 @@ function toCustom(evt){
 function toIndex(evt){
     window.location.href = "./index.html";
 }
-drawPizzaOnCheckout();
-function drawPizzaOnCheckout(){
+drawPizza();
+function drawPizza(){
     var str = "";
     var bgsize = "";
     for(var i =0; i < toppingArray.length; i++){
@@ -451,6 +355,10 @@ function drawPizzaOnCheckout(){
             canvas.style.background = str+", url(images/pizza/crust.png)";
             canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
         }
+    }
+    if(toppingArray.length === 0){
+        canvas.style.background = "url(images/pizza/crust.png)";
+        canvas.style.backgroundSize = bgSize.toString()+"px";
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';

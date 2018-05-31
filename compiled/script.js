@@ -4,7 +4,7 @@ HTML_ARRAY[1] = "<div class='row fit'> <img src='images/slice-logo3.png' class='
 HTML_ARRAY[2] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>HOW HUNGRY ARE YOU?</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='sm' class='pizza-option'>SMALL 8in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='med' class='pizza-option'>MEDIUM 10in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='lg' class='pizza-option'>LARGE 14in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='xl' class='pizza-option'>X-LARGE 20in</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='startOrder()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSauce()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row'> <!-- <div class='col-l-12' id='pizza-display'></div> --> <canvas id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
 
 HTML_ARRAY[3] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>SAUCE IT UP:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row'> <canvas class='col-l-12' id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
-HTML_ARRAY[4] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table> <tr> <th><input type='checkbox' id='bacon'></input>Bacon</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='pepperoni'></input>Pepperoni</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='pineapple'></input>Pineapples</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='mushrooms'></input>Mushrooms</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='sausage'></input>Sausage</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='olives'></input>Olives</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='ham'></input>Ham</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='spinach'></input>Spinach</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='chicken'></input>Chicken</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> <tr> <th><input type='checkbox' id='onion'></input>Onions</th> <td><select class='topWidth'> <option value='' selected='selected'>Full/Half</option> <option value='Full'>Full</option> <option value='Left Half'>Left Half</option> <option value='Right Half'>Right Half</option> </select></td> </tr> </table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row'> <canvas id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
+HTML_ARRAY[4] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row'> <canvas id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
 HTML_ARRAY[5] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <!-- <div id='custom' class='btn'>More Pizza, Big Daddy!</div> <div id='home' class='btn'>Nah, I'm straight.</div> --> </div> </div>";
 var pizzaDiv = document.getElementById('pizza');
 var totalText = document.getElementById('total');
@@ -44,13 +44,13 @@ var pizzaSizeCost = 0;
 var canvas;
 var ctx;
 //Sizes Page
-var sm = document.getElementById('sm');
-var med = document.getElementById('med');
-var lg = document.getElementById('lg');
-var xl = document.getElementById('xl');
-var priceDtls = document.getElementById('price');
-var sizeDtls = document.getElementById('sizeDtls');
-var toppings = document.getElementById('toppingsDtls');
+var sm;
+var med;
+var lg;
+var xl;
+var priceDtls;
+var sizeDtls;
+var toppings;
 
 var width = 0;
 var height = 0;
@@ -59,9 +59,8 @@ var price = 0.00;
 var toppingPrice = 0;
 var bgSize = 0;
 
-function displaySize(evt){
+function displaySizeClick(evt){
     document.getElementsByClassName('fa-arrow-right')[0].style.visibility = "visible";
-    ctx.clearRect(0,0,width,height);
     if(evt.srcElement.id === "sm"){
         pizzaSizeCost = 2.00;
         bgSize = 160;
@@ -81,140 +80,94 @@ function displaySize(evt){
     }
     sizeDtls.innerHTML = 'SIZE: '+str;
     var toppingStr = "";
-    toppings.innerHTML = "TOPPINGS: ";
     for(i = 0; i < toppingArrayDtls.length; i++){
         toppingStr += toppingArrayDtls[i]+", ";
     }
-    toppings.innerHTML += toppingStr.slice(0, -2);
+    toppings.innerHTML = "TOPPINGS: "+toppingStr.slice(0, -2);
 
+    size = evt.srcElement.id;
     orderTotal = (pizzaTypeCost + pizzaSizeCost);
     priceDtls.innerHTML = "Total: $"+orderTotal;
     canvas.style.background = pizzaTypeUrl;
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
     canvas.style.backgroundSize = bgSize.toString()+"px"; 
-    size = evt.srcElement.id;
 }
-function toToppings(evt){
-    window.location.href = "./topping.html";
-}
-
-function drawPizzaSize(){
-    var str = "";
-    ctx.clearRect(0,0,width,height);
+function setPizzaSize(){
+    var sizeString = "";
     if(size === "sm"){
-        str = 'Small 8"';
-        bgSize = 160;
+        sizeString = 'Small 8"';
     }else if(size === "med"){
-        str = 'Medium 10"';
-        bgSize = 175;
+        sizeString = 'Medium 10"';
     }else if(size === "lg"){
-        str = 'Large 14"';
-        bgSize = 200;
+        sizeString = 'Large 14"';
     }else if(size === "xl"){
-        str = 'X-Large 20"';
-        bgSize = 210;
+        sizeString = 'X-Large 20"';
     }
-    sizeDtls.innerHTML = 'SIZE: '+str;
+    sizeDtls.innerHTML = 'SIZE: '+sizeString;
     priceDtls.innerHTML = "Total: $"+orderTotal;
-    
-    canvas.style.background = pizzaTypeUrl;
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
-    canvas.style.backgroundSize = bgSize.toString()+"px"; 
+    drawPizza();
 }
 // Toppings Page
 var toppingArray = [];
 var toppingArrayDtls = [];
-var checkout = document.getElementById('checkout');
-var topWidth = document.getElementsByClassName('topWidth');
+var checkout;
+var topWidth;
 
-var bacon = document.getElementById('bacon');
-var pepperoni = document.getElementById('pepperoni');
-var chicken = document.getElementById('chicken');
-var ham = document.getElementById('ham');
-var mushrooms = document.getElementById('mushrooms');
-var olives = document.getElementById('olives');
-var onion = document.getElementById('onion');
-var pineapple = document.getElementById('pineapple');
-var spinach = document.getElementById('spinach');
-var sausage = document.getElementById('sausage');
+var table;
+var buttonNames = ["bacon", "pepperoni", "pineapple", "mushrooms", "sausage", "olives", "ham", "spinach", "chicken", "onion"];
+var buttons = [];
+
+function buildTopping(item, index, arr){
+    //Create table row and heading for button
+    var row = document.createElement('tr');
+    var heading = document.createElement('th');
+    heading.textContent = item.charAt(0).toUpperCase() + item.substring(1);
+    //Create topping button
+    buttons[index] = document.createElement('input');
+    buttons[index].id = item;
+    buttons[index].type = 'checkbox';
+    //Append button to table
+    heading.appendChild(buttons[index]);
+    row.appendChild(heading);
+    table.appendChild(row);
+    //Add event listener to button
+    buttons[index].addEventListener('click', toppingHandlerClick);
+    //Create table detail Regular/Extra dropdown
+    var td = document.createElement('td');
+    var select = document.createElement('select');
+    select.setAttribute('class', 'topWidth');
+    select.id = item;
+    var option1 = document.createElement('option');
+    option1.selected = true; option1.textContent = "Full/Half";
+    var option2 = document.createElement('option');
+    option2.value = "Full"; option2.textContent = "Full";
+    var option3 = document.createElement('option');
+    option3.value = "Left Half"; option3.textContent = "Left Half";
+    var option4 = document.createElement('option');
+    option4.value = "Right Half"; option4.textContent = "Right Half";
+    //Append dropdown to table
+    select.appendChild(option1);
+    select.appendChild(option2);
+    select.appendChild(option3);
+    select.appendChild(option4);
+    td.appendChild(select);
+    row.appendChild(td);
+    //Add event listener to dropdown
+    select.addEventListener('click', changeImageClick);
+}
 
 function toCheckout(evt){
     pizzaDiv.innerHTML = HTML_ARRAY[5];
 }
-function changeImage(evt){
-    console.log(evt);
-        if(topWidth[0].value === "Left Half"){
-            left('bacon');
-        }else if(topWidth[0].value === "Right Half"){
-            right('bacon');
-        }else if(topWidth[0].value === "Full"){
-            full('bacon');
-        }
-        if(topWidth[1].value === "Left Half"){
-            left('pepperoni');
-        }else if(topWidth[1].value === "Right Half"){
-            right('pepperoni');
-        }else if(topWidth[1].value === "Full"){
-            full('pepperoni');
-        }
-        if(topWidth[2].value === "Left Half"){
-            left('pineapple');
-        }else if(topWidth[2].value === "Right Half"){
-            right('pineapple');
-        }else if(topWidth[2].value === "Full"){
-            full('pineapple');
-        }
-        if(topWidth[3].value === "Left Half"){
-            left('mushrooms');
-        }else if(topWidth[3].value === "Right Half"){
-            right('mushrooms');
-        }else if(topWidth[3].value === "Full"){
-            full('mushrooms');
-        }
-        if(topWidth[4].value === "Left Half"){
-            left('sausage');
-        }else if(topWidth[4].value === "Right Half"){
-            right('sausage');
-        }else if(topWidth[4].value === "Full"){
-            full('sausage');
-        }
-        if(topWidth[5].value === "Left Half"){
-            left('olives');
-        }else if(topWidth[5].value === "Right Half"){
-            right('olives');
-        }else if(topWidth[5].value === "Full"){
-            full('olives');
-        }
-        if(topWidth[6].value === "Left Half"){
-            left('ham');
-        }else if(topWidth[6].value === "Right Half"){
-            right('ham');
-        }else if(topWidth[6].value === "Full"){
-            full('ham');
-        }
-        if(topWidth[7].value === "Left Half"){
-            left('spinach');
-        }else if(topWidth[7].value === "Right Half"){
-            right('spinach');
-        }else if(topWidth[7].value === "Full"){
-            full('spinach');
-        }
-        if(topWidth[8].value === "Left Half"){
-            left('chicken');
-        }else if(topWidth[8].value === "Right Half"){
-            right('chicken');
-        }else if(topWidth[8].value === "Full"){
-            full('chicken');
-        }
-        if(topWidth[9].value === "Left Half"){
-            left('onion');
-        }else if(topWidth[9].value === "Right Half"){
-            right('onion');
-        }else if(topWidth[9].value === "Full"){
-            full('onion');
-        }
+function changeImageClick(evt){
+    if(evt.target.value === "Left Half"){
+        left(evt.target.id);
+    }else if(evt.target.value === "Right Half"){
+        right(evt.target.id);
+    }else if(evt.target.value === "Full"){
+        full(evt.target.id);
+    }
 }
 function full(top){
     for(var i =0; i < toppingArray.length; i++){
@@ -223,20 +176,7 @@ function full(top){
             toppingArray[i] = toppingArray[i].replace("right", "full");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 45)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", "+pizzaTypeUrl;
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
 function left(top){
     for(var i =0; i < toppingArray.length; i++){
@@ -245,20 +185,7 @@ function left(top){
             toppingArray[i] = toppingArray[i].replace("right", "left");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 45)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", "+pizzaTypeUrl;
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
 function right(top){
     for(var i =0; i < toppingArray.length; i++){
@@ -267,22 +194,9 @@ function right(top){
             toppingArray[i] = toppingArray[i].replace("left", "right");
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", "+pizzaTypeUrl;
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
 }
-function modifyTopping(evt){
+function toppingHandlerClick(evt){
     if(evt.target.checked === true) addTopping(evt);
     else removeTopping(evt);
 }
@@ -328,20 +242,7 @@ function addTopping(evt){
         toppingArray.push("url(images/pizza/sausage-full.png)");
         toppingArrayDtls.push('Sausage');toppingPrice += 1;
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 45)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", "+pizzaTypeUrl;
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
     details();
 }
 function removeTopping(evt){
@@ -408,36 +309,21 @@ function removeTopping(evt){
             }
         }
     }
-    var str = "";
-    var bgsize = "";
-    for(var i =0; i < toppingArray.length; i++){
-        str += toppingArray[i]+", ";
-        bgsize += (bgSize - 45)+"px, ";
-        if(i == toppingArray.length-1){
-            str = str.slice(0, -2);
-            bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", "+pizzaTypeUrl;
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
-        }
-    }
-    if(toppingArray.length === 0){
-        canvas.style.background = pizzaTypeUrl;
-        canvas.style.backgroundSize = bgSize.toString()+"px";
-    }
-    canvas.style.backgroundPosition = 'center';
-    canvas.style.backgroundRepeat = 'no-repeat';
+    drawPizza();
     details();
 }
 function details(){
     var str = "";
+    
     if(toppingArray.length === 1){ 
-        toppingPrice = 0; 
-    }
+        toppingPrice = 0; checkout.style.visibility = "visible";
+        checkout.style.visibility = "visible"; }
     else if(toppingArray.length === 5){ 
-        toppingPrice = 3; document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
-    else if(toppingArray.length > 1) {checkout.style.visibility = "visible";}
-    else{ document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden';
-        checkout.style.visibility = "hidden";
+        toppingPrice = 3; 
+        document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
+    else if(toppingArray.length < 1) { checkout.style.visibility = "hidden"; }
+    else{ 
+        document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden';
     }
     if(toppingPrice < 0){ toppingPrice = 0; }
 
@@ -456,18 +342,22 @@ if(custom != null && home != null){
     home.addEventListener('click', toIndex);
 }
 
-function drawPizzaOnCheckout(){
+function drawPizza(){
     var str = "";
     var bgsize = "";
     for(var i =0; i < toppingArray.length; i++){
         str += toppingArray[i]+", ";
-        bgsize += (bgSize - 25)+"px, ";
+        bgsize += (bgSize - 40)+"px, ";
         if(i == toppingArray.length-1){
             str = str.slice(0, -2);
             bgsize = bgsize.slice(0, -2);
-            canvas.style.background = str+", url(images/pizza/crust.png)";
-            canvas.style.backgroundSize = bgsize+", "+bgSize.toString()+"px";
+            canvas.style.background = str+", url(images/pizza/cheese-extra.png), "+pizzaTypeUrl;
+            canvas.style.backgroundSize = bgsize+", "+(bgSize - 25)+"px, "+bgSize.toString()+"px";
         }
+    }
+    if(toppingArray.length === 0){
+        canvas.style.background = "url(images/pizza/cheese-extra.png), "+pizzaTypeUrl;
+        canvas.style.backgroundSize = (bgSize - 25)+"px, "+bgSize.toString()+"px";
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
@@ -509,15 +399,13 @@ function loadSizes(){
     xl = document.getElementById('xl');
     priceDtls = document.getElementById('price');
     sizeDtls = document.getElementById('sizeDtls');
-    sm.addEventListener('click', displaySize);
-    med.addEventListener('click', displaySize);
-    lg.addEventListener('click', displaySize);
-    xl.addEventListener('click', displaySize);
-    drawPizzaSize();
+    sm.addEventListener('click', displaySizeClick);
+    med.addEventListener('click', displaySizeClick);
+    lg.addEventListener('click', displaySizeClick);
+    xl.addEventListener('click', displaySizeClick);
 }
 
 function loadSauce(){
-    console.log(pizzaType);
     if(pizzaType !== 'custom'){
         pizzaDiv.innerHTML = HTML_ARRAY[5];
     }else{
@@ -531,7 +419,7 @@ function loadSauce(){
         marinaraBtn = document.getElementById('sauce-marinara');
         bbqBtn = document.getElementById('sauce-bbq');
         alfredoBtn = document.getElementById('sauce-alfredo');
-        drawPizzaSize();
+        setPizzaSize();
     }
     
 }
@@ -546,33 +434,11 @@ function loadToppings(){
     sizeDtls = document.getElementById('sizeDtls');
     toppings = document.getElementById('toppingsDtls');
     checkout = document.getElementById('checkout');
-    bacon = document.getElementById('bacon');
-    pepperoni = document.getElementById('pepperoni');
-    chicken = document.getElementById('chicken');
-    ham = document.getElementById('ham');
-    mushrooms = document.getElementById('mushrooms');
-    olives = document.getElementById('olives');
-    onion = document.getElementById('onion');
-    pineapple = document.getElementById('pineapple');
-    spinach = document.getElementById('spinach');
-    sausage = document.getElementById('sausage');
-
-    bacon.addEventListener('click', modifyTopping);
-    pepperoni.addEventListener('click', modifyTopping);
-    chicken.addEventListener('click', modifyTopping);
-    ham.addEventListener('click', modifyTopping);
-    mushrooms.addEventListener('click', modifyTopping);
-    olives.addEventListener('click', modifyTopping);
-    onion.addEventListener('click', modifyTopping);
-    pineapple.addEventListener('click', modifyTopping);
-    spinach.addEventListener('click', modifyTopping);
-    sausage.addEventListener('click', modifyTopping);
-    checkout.addEventListener('click', toCheckout);
     topWidth = document.getElementsByClassName('topWidth');
-    for(i = 0; i < topWidth.length; i++){
-        topWidth[i].addEventListener('click', changeImage);
-    }
-    drawPizzaSize();
+    table = document.getElementById('tableContainer');
+    buttonNames.forEach(buildTopping);
+    checkout.addEventListener('click', toCheckout);
+    setPizzaSize();
 }
 
 function refresh(){
@@ -589,6 +455,7 @@ function getOrderTotal(){
 }
 
 function setPizzaType(type){
+    toppingArrayDtls = [];
     document.getElementsByClassName('fa-arrow-right')[0].style.visibility = "visible";
     if(type == "custom"){
         pizzaType = type;
@@ -821,7 +688,7 @@ function setPizzaSauce(sauce){
         alfredoBtn.classList.add('selected-pizza');    
         pizzaTypeUrl = "url(images/pizza/sauce-alfredo.png)"; 
     }
-    drawPizzaSize();
+    setPizzaSize();
 }
 
 function resetPizzaSauceBtns(sauce){
