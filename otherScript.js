@@ -88,6 +88,7 @@ var toppingArrayDtls = [];
 var checkout = document.getElementById('checkout');
 
 var topWidth = document.getElementsByClassName('topWidth');
+var topAmount = document.getElementsByClassName('topAmount');
 
 if(checkout != null){
     checkout.addEventListener('click', toCheckout);
@@ -137,7 +138,7 @@ function buildTopping(item, index, arr){
     //Create table detail Regular/Extra dropdown
     var tdA = document.createElement('td');
     var selectA = document.createElement('select');
-    // selectA.setAttribute('class', 'topWidth');
+    selectA.setAttribute('class', 'topAmount');
     selectA.id = item;
     var optionA = document.createElement('option');
     optionA.selected = true; optionA.textContent = "Reg/Extra";
@@ -152,7 +153,7 @@ function buildTopping(item, index, arr){
     tdA.appendChild(selectA);
     row.appendChild(tdA);
     //Add event listener to dropdown
-    // selectA.addEventListener('click', changeImageClick);
+    selectA.addEventListener('click', changeImageClick);
 }
 
 function toCheckout(evt){
@@ -165,6 +166,10 @@ function changeImageClick(evt){
         right(evt.target.id);
     }else if(evt.target.value === "Full"){
         full(evt.target.id);
+    }else if(evt.target.value === "Regular"){
+        regular(evt.target.id);
+    }else if(evt.target.value === "Extra"){
+        extra(evt.target.id);
     }
 }
 function full(top){
@@ -190,6 +195,22 @@ function right(top){
         if(toppingArray[i].includes(top) === true){
             toppingArray[i] = toppingArray[i].replace("full", "right");
             toppingArray[i] = toppingArray[i].replace("left", "right");
+        }
+    }
+    drawPizza();
+}
+function extra(top){
+    for(var i =0; i < toppingArray.length; i++){
+        if(toppingArray[i].includes(top) === true && !toppingArray[i].includes('extra')){
+            toppingArray[i] = toppingArray[i].slice(0, -5)+"-extra.png)";
+        }
+    }
+    drawPizza();
+}
+function regular(top){
+    for(var i =0; i < toppingArray.length; i++){
+        if(toppingArray[i].includes(top) === true){
+            toppingArray[i] = toppingArray[i].replace("-extra", "");
         }
     }
     drawPizza();

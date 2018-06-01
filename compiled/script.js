@@ -112,7 +112,8 @@ function setPizzaSize(){
 var toppingArray = [];
 var toppingArrayDtls = [];
 var checkout;
-var topWidth;
+var full_l_r_top;
+var reg_extra_top;
 
 var table;
 var buttonNames = ["bacon", "pepperoni", "pineapple", "mushrooms", "sausage", "olives", "ham", "spinach", "chicken", "onion"];
@@ -136,7 +137,7 @@ function buildTopping(item, index, arr){
     //Create table detail Regular/Extra dropdown
     var td = document.createElement('td');
     var select = document.createElement('select');
-    select.setAttribute('class', 'topWidth');
+    select.setAttribute('class', 'full_l_r_top');
     select.id = item;
     var option1 = document.createElement('option');
     option1.selected = true; option1.textContent = "Full/Half";
@@ -155,6 +156,25 @@ function buildTopping(item, index, arr){
     row.appendChild(td);
     //Add event listener to dropdown
     select.addEventListener('click', changeImageClick);
+    //Create table detail Regular/Extra dropdown
+    var tdA = document.createElement('td');
+    var selectA = document.createElement('select');
+    selectA.setAttribute('class', 'reg_extra_top');
+    selectA.id = item;
+    var optionA = document.createElement('option');
+    optionA.selected = true; optionA.textContent = "Reg/Extra";
+    var optionB = document.createElement('option');
+    optionB.value = "Regular"; optionB.textContent = "Regular";
+    var optionC = document.createElement('option');
+    optionC.value = "Extra"; optionC.textContent = "Extra";
+    //Append dropdown to table
+    selectA.appendChild(optionA);
+    selectA.appendChild(optionB);
+    selectA.appendChild(optionC);
+    tdA.appendChild(selectA);
+    row.appendChild(tdA);
+    //Add event listener to dropdown
+    selectA.addEventListener('click', changeImageClick);
 }
 
 function toCheckout(evt){
@@ -167,6 +187,10 @@ function changeImageClick(evt){
         right(evt.target.id);
     }else if(evt.target.value === "Full"){
         full(evt.target.id);
+    }else if(evt.target.value === "Regular"){
+        regular(evt.target.id);
+    }else if(evt.target.value === "Extra"){
+        extra(evt.target.id);
     }
 }
 function full(top){
@@ -196,49 +220,75 @@ function right(top){
     }
     drawPizza();
 }
+function extra(top){
+    for(var i =0; i < toppingArray.length; i++){
+        if(toppingArray[i].includes(top) === true && !toppingArray[i].includes('extra')){
+            toppingArray[i] = toppingArray[i].slice(0, -5)+"-extra.png)";
+        }
+    }
+    drawPizza();
+}
+function regular(top){
+    for(var i =0; i < toppingArray.length; i++){
+        if(toppingArray[i].includes(top) === true){
+            toppingArray[i] = toppingArray[i].replace("-extra", "");
+        }
+    }
+    drawPizza();
+}
 function toppingHandlerClick(evt){
     if(evt.target.checked === true) addTopping(evt);
     else removeTopping(evt);
 }
 function addTopping(evt){
     if(evt.srcElement.id === "bacon" && evt.target.checked === true){
-        topWidth[0].children[1].selected = true;
+        full_l_r_top[0].children[1].selected = true;
+        reg_extra_top[0].children[1].selected = true;
         toppingArray.push("url(images/pizza/bacon-full.png)");
         toppingArrayDtls.push('Bacon');toppingPrice += 1;
     } else if(evt.srcElement.id === "pepperoni" && evt.target.checked === true){
-        topWidth[1].children[1].selected = true;
+        full_l_r_top[1].children[1].selected = true;
+        reg_extra_top[1].children[1].selected = true;
         toppingArray.push("url(images/pizza/pepperoni-full.png)");
         toppingArrayDtls.push('Pepperoni');toppingPrice += 1;
     }else if(evt.srcElement.id === "chicken" && evt.target.checked === true){
-        topWidth[8].children[1].selected = true;
+        full_l_r_top[8].children[1].selected = true;
+        reg_extra_top[8].children[1].selected = true;
         toppingArray.push("url(images/pizza/chicken-full.png)");
         toppingArrayDtls.push('Chicken');toppingPrice += 1;
     }else if(evt.srcElement.id === "ham" && evt.target.checked === true){
-        topWidth[6].children[1].selected = true;
+        full_l_r_top[6].children[1].selected = true;
+        reg_extra_top[6].children[1].selected = true;
         toppingArray.push("url(images/pizza/ham-full.png)");
         toppingArrayDtls.push('Ham');toppingPrice += 1;
     }else if(evt.srcElement.id === "mushrooms" && evt.target.checked === true){
-        topWidth[3].children[1].selected = true;
+        full_l_r_top[3].children[1].selected = true;
+        reg_extra_top[3].children[1].selected = true;
         toppingArray.push("url(images/pizza/mushrooms-full.png)");
         toppingArrayDtls.push('Mushrooms');toppingPrice += 1;
     }else if(evt.srcElement.id === "olives" && evt.target.checked === true){
-        topWidth[5].children[1].selected = true;
+        full_l_r_top[5].children[1].selected = true;
+        reg_extra_top[5].children[1].selected = true;
         toppingArray.push("url(images/pizza/olives-full.png)");
         toppingArrayDtls.push('Olives');toppingPrice += 1;
     }else if(evt.srcElement.id === "onion" && evt.target.checked === true){
-        topWidth[9].children[1].selected = true;
+        full_l_r_top[9].children[1].selected = true;
+        reg_extra_top[9].children[1].selected = true;
         toppingArray.push("url(images/pizza/onion-full.png)");
         toppingArrayDtls.push('Onion');toppingPrice += 1;
     }else if(evt.srcElement.id === "pineapple" && evt.target.checked === true){
-        topWidth[2].children[1].selected = true;
+        full_l_r_top[2].children[1].selected = true;
+        reg_extra_top[2].children[1].selected = true;
         toppingArray.push("url(images/pizza/pineapple-full.png)");
         toppingArrayDtls.push('Pineapple');toppingPrice += 1;
     }else if(evt.srcElement.id === "spinach" && evt.target.checked === true){
-        topWidth[7].children[1].selected = true;
+        full_l_r_top[7].children[1].selected = true;
+        reg_extra_top[7].children[1].selected = true;
         toppingArray.push("url(images/pizza/spinach-full.png)");
         toppingArrayDtls.push('Spinach');toppingPrice += 1;
     }else if(evt.srcElement.id === "sausage" && evt.target.checked === true){
-        topWidth[4].children[1].selected = true;
+        full_l_r_top[4].children[1].selected = true;
+        reg_extra_top[4].children[1].selected = true;
         toppingArray.push("url(images/pizza/sausage-full.png)");
         toppingArrayDtls.push('Sausage');toppingPrice += 1;
     }
@@ -248,61 +298,71 @@ function addTopping(evt){
 function removeTopping(evt){
     for(var i = toppingArray.length-1; i >= 0 ; i--){
         if(evt.srcElement.id === "bacon" && evt.target.checked === false){
-            topWidth[0].children[0].selected = true;
+            full_l_r_top[0].children[0].selected = true;
+            reg_extra_top[0].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         } else if(evt.srcElement.id === "pepperoni" && evt.target.checked === false){
-            topWidth[1].children[0].selected = true;
+            full_l_r_top[1].children[0].selected = true;
+            reg_extra_top[1].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "chicken" && evt.target.checked === false){
-            topWidth[8].children[0].selected = true;
+            full_l_r_top[8].children[0].selected = true;
+            reg_extra_top[8].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "ham" && evt.target.checked === false){
-            topWidth[6].children[0].selected = true;
+            full_l_r_top[6].children[0].selected = true;
+            reg_extra_top[6].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "mushrooms" && evt.target.checked === false){
-            topWidth[3].children[0].selected = true;
+            full_l_r_top[3].children[0].selected = true;
+            reg_extra_top[3].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "olives" && evt.target.checked === false){
-            topWidth[5].children[0].selected = true;
+            full_l_r_top[5].children[0].selected = true;
+            reg_extra_top[5].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "onion" && evt.target.checked === false){
-            topWidth[9].children[0].selected = true;
+            full_l_r_top[9].children[0].selected = true;
+            reg_extra_top[9].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "pineapple" && evt.target.checked === false){
-            topWidth[2].children[0].selected = true;
+            full_l_r_top[2].children[0].selected = true;
+            reg_extra_top[2].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "spinach" && evt.target.checked === false){
-            topWidth[7].children[0].selected = true;
+            full_l_r_top[7].children[0].selected = true;
+            reg_extra_top[7].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
             }
         }else if(evt.srcElement.id === "sausage" && evt.target.checked === false){
-            topWidth[4].children[0].selected = true;
+            full_l_r_top[4].children[0].selected = true;
+            reg_extra_top[4].children[0].selected = true;
             if(toppingArray[i].includes(evt.srcElement.id) === true){ toppingArray.splice(i, 1);
                 toppingArrayDtls.splice(i, 1);
                 toppingPrice -= 1;
@@ -434,7 +494,8 @@ function loadToppings(){
     sizeDtls = document.getElementById('sizeDtls');
     toppings = document.getElementById('toppingsDtls');
     checkout = document.getElementById('checkout');
-    topWidth = document.getElementsByClassName('topWidth');
+    full_l_r_top = document.getElementsByClassName('full_l_r_top');
+    reg_extra_top = document.getElementsByClassName('reg_extra_top');
     table = document.getElementById('tableContainer');
     buttonNames.forEach(buildTopping);
     checkout.addEventListener('click', toCheckout);
