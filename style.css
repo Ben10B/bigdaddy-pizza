@@ -130,3 +130,15 @@ ul{
 .tooltip:hover .tooltiptext {
     visibility: visible;
 }
+.topWidth, .topAmount{
+    background-color: #Ec6c64;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #000;
+}
+.topWidth:hover, .topAmount:hover{
+    box-shadow: 0px 0px 0px #000;
+}
+option{
+    background-color: #FDE4A7;
+}
