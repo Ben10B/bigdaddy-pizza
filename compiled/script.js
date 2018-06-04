@@ -9,10 +9,12 @@ HTML_ARRAY[2] = " <div class='row'> <img src='images/slice-logo3.png' class='bra
 HTML_ARRAY[3] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>SAUCE IT UP:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div>";
 //toppings
 HTML_ARRAY[4] = " <div class='row fit fadeIn'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit fadeIn'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> </div> </div>";
+//review
+HTML_ARRAY[5] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>REVIEW ORDER:</h1> <div class='center' id='review'> </div> <div class='button' id='placeOrder'>PLACE ORDER</div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> </div> </div>";
 //confirmation
-HTML_ARRAY[5] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <!-- <div id='custom' class='btn'>More Pizza, Big Daddy!</div> <div id='home' class='btn'>Nah, I'm straight.</div> --> </div> </div>";
+HTML_ARRAY[6] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <canvas id='pizzaDisplay'></canvas> </div> </div>";
 //load animation
-HTML_ARRAY[6] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <img id='loaderLogo' src='images/pizza/prebuilt-pepperoni.png'/> <h1 id='loaderText' class='center' data-text='LOADING TOPPINGS...'>LOADING TOPPINGS...</h1> </div> </div>";
+HTML_ARRAY[7] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <img id='loaderLogo' src='images/pizza/prebuilt-pepperoni.png'/> <h1 id='loaderText' class='center' data-text='LOADING TOPPINGS...'>LOADING TOPPINGS...</h1> </div> </div>";
 var pizzaDiv = document.getElementById('pizza');
 var totalText = document.getElementById('total');
 
@@ -188,6 +190,7 @@ function buildTopping(item, index, arr){
 
 function toCheckout(evt){
     pizzaDiv.innerHTML = HTML_ARRAY[5];
+    loadReview();
 }
 function changeImageClick(evt){
     if(evt.target.value === "Left Half"){
@@ -238,7 +241,7 @@ function extra(top){
     for(var i =0; i < toppingArray.length; i++){
         if(toppingArray[i].includes(top) === true && !toppingArray[i].includes('extra')){
             toppingArray[i] = toppingArray[i].slice(0, -5)+"-extra.png)";
-            toppingArrayDtls[i] = toppingArrayDtls[i].concat(" Extra");
+            toppingArrayDtls[i] = "Extra "+toppingArrayDtls[i];
         }
     }
 }
@@ -246,7 +249,7 @@ function regular(top){
     for(var i =0; i < toppingArray.length; i++){
         if(toppingArray[i].includes(top) === true){
             toppingArray[i] = toppingArray[i].replace("-extra", "");
-            toppingArrayDtls[i] = toppingArrayDtls[i].replace(" Extra", "");
+            toppingArrayDtls[i] = toppingArrayDtls[i].replace("Extra ", "");
         }
     }
 }
@@ -396,7 +399,7 @@ function details(){
         toppingPrice = 3; 
         document.getElementsByClassName('tooltip')[0].style.visibility = 'visible'; }
     else if(toppingArray.length < 1) { checkout.style.visibility = "hidden"; }
-    else{ 
+    else if(toppingArray.length < 5){ 
         document.getElementsByClassName('tooltip')[0].style.visibility = 'hidden';
     }
     if(toppingPrice < 0){ toppingPrice = 0; }
@@ -408,14 +411,6 @@ function details(){
     }
     toppings.innerHTML += str.slice(0, -2);
 }
-//Checkout Page
-var custom = document.getElementById('custom');
-var home = document.getElementById('home');
-if(custom != null && home != null){
-    custom.addEventListener('click', toCustom);
-    home.addEventListener('click', toIndex);
-}
-
 function drawPizza(){
     var str = "";
     var bgsize = "";
@@ -432,10 +427,15 @@ function drawPizza(){
     if(toppingArray.length === 0){
         canvas.style.background = "url(images/pizza/cheese-extra.png), "+pizzaTypeUrl;
         canvas.style.backgroundSize = (bgSize - 25)+"px, "+bgSize.toString()+"px";
+    }if(pizzaType !== 'custom'){
+        canvas.style.background = pizzaTypeUrl;
+        canvas.style.backgroundSize = bgSize.toString()+"px";
     }
     canvas.style.backgroundPosition = 'center';
     canvas.style.backgroundRepeat = 'no-repeat';
 }
+//Review Page
+var review;
 
 ///end
 function validateLocation(){
@@ -499,7 +499,7 @@ function loadSizes(){
 
 function loadSauce(){
     if(pizzaType !== 'custom'){
-        pizzaDiv.innerHTML = HTML_ARRAY[5];
+        toCheckout();
     }else{
             pizzaDiv.innerHTML = HTML_ARRAY[3];
             canvas = document.getElementById('pizzaDisplay');
@@ -517,7 +517,7 @@ function loadSauce(){
 }
 
 function loadToppings(){
-    pizzaDiv.innerHTML = HTML_ARRAY[6];
+    pizzaDiv.innerHTML = HTML_ARRAY[7];
     setTimeout(function (){
         pizzaDiv.innerHTML = HTML_ARRAY[4];
         canvas = document.getElementById('pizzaDisplay');
@@ -536,7 +536,32 @@ function loadToppings(){
         setPizzaSize();
     },3000);
 }
-
+function loadReview(){
+    review = document.getElementById('review');
+    var placeOrder = document.getElementById('placeOrder');
+    placeOrder.addEventListener('click', toFinalPage);
+    canvas = document.getElementById('pizzaDisplay');
+    ctx = canvas.getContext('2d');
+    width = canvas.width;
+    height = canvas.height;
+    priceDtls = document.getElementById('price');
+    for(var i = 0; i < toppingArrayDtls.length; i++){
+        var h2 = document.createElement('h2');
+        h2.textContent = toppingArrayDtls[i];
+        h2.className = 'reviewDetail';
+        review.appendChild(h2);
+    }
+    drawPizza();
+    priceDtls.innerHTML = "Total: $"+(orderTotal + toppingPrice).toFixed(2);
+}
+function toFinalPage(evt){
+    pizzaDiv.innerHTML = HTML_ARRAY[6];
+    canvas = document.getElementById('pizzaDisplay');
+    ctx = canvas.getContext('2d');
+    width = canvas.width;
+    height = canvas.height;
+    drawPizza();
+}
 function refresh(){
     var content = pizza.innerHTML;
     pizza.innerHTML= content;
