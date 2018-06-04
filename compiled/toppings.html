@@ -10,10 +10,10 @@
     </head>
 
     <body>
-        <div class='row fit'>
+        <div class='row fit fadeIn'>
             <img src='images/slice-logo3.png' class='brand-logo'/>
         </div>
-        <div class='row fit'>
+        <div class='row fit fadeIn'>
             <div class='col-l-6 center' id='delivery'>
                 <h1 class='center'>TOP IT UP:</h1>
                 <div class='tooltip'>SPECIAL DEAL!
@@ -28,8 +28,12 @@
             </div>
             <div class='col-l-6 center' id='carryout'>
                 <h1 class='center' id='price'>TOTAL: $0.00</h1>
+                <div class='row pizzaRow'>
+                    <div class='col-l-12'>
+                        <canvas id='pizzaDisplay'></canvas>
+                    </div>
+                </div>
                 <div class='row'>
-                    <canvas id='pizzaDisplay'></canvas>
                     <div class='col-l-12' id='details'>
                         <h3>ORDER DETAILS</h3>
                         <ul>
@@ -38,9 +42,6 @@
                         </ul>
                         <div class='button' id='checkout'>Add to Order</div>
                     </div>
-                </div>
-                <div class='row'>
-                    <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div>
                 </div>
             </div>
         </div>

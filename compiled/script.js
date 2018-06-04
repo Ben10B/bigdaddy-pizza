@@ -1,11 +1,18 @@
 var HTML_ARRAY = [];
-HTML_ARRAY[0] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>DELIVERY</h1> <div id='address-form'> <input type='text' placeholder='Street'> <br> <input type='text' placeholder='Apt, Suite (optional)'> <br> <input type='text' placeholder='City'> <br> <input type='text' id='stateBox'placeholder='State'> <input type='text' id='zipBox' placeholder='Zip Code'> </div> <div class='button' onclick='startOrder()'>FIND STORE</div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center'>CARRYOUT</h1> <input type='text' id='zipBox' placeholder='Zip Code, City, or State'> <div class='button' onclick='startOrder()'>FIND STORE</div> </div> </div>";
+//delivery
+HTML_ARRAY[0] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>DELIVERY</h1> <div id='address-form'> <input id='streetBox' type='text' placeholder='Street'> <br> <input type='text' placeholder='Apt, Suite (optional)'> <br> <input id='cityBox' type='text' placeholder='City'> <br> <input type='text' id='stateBox'placeholder='State'> <input type='text' id='zipBox' placeholder='Zip Code'> </div> <div class='button' onclick='startOrder()'>FIND STORE</div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center'>CARRYOUT</h1> <input type='text' id='zipBox2' placeholder='Zip Code, City, or State'> <div class='button' onclick='startOrder()'>FIND STORE</div> </div> </div>";
+//choose
 HTML_ARRAY[1] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>PICK A PIZZA TO CUSTOMIZE:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`custom`, this)' id='pizza-custom' class='pizza-option'>CUSTOM</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`cheese`, this)' id='pizza-cheese' class='pizza-option'>CHEESE</h2></div> </div> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`pepperoni`, this)' id='pizza-pepperoni' class='pizza-option'>PEPPERONI</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`meat`, this)' id='pizza-meat' class='pizza-option'>MEAT-MANIA</h2></div> </div> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`hawaiian`, this)' id='pizza-hawaiian'class='pizza-option'>HAWAIIAN</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`alfredo`, this)' id='pizza-alfredo' class='pizza-option'>ALFREDO</h2></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='prevPage()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSizes()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='total'>TOTAL: $0</h1> <div class='row'> <div class='col-l-12' id='pizza-display'></div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
-HTML_ARRAY[2] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>HOW HUNGRY ARE YOU?</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='sm' class='pizza-option'>SMALL 8in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='med' class='pizza-option'>MEDIUM 10in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='lg' class='pizza-option'>LARGE 14in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='xl' class='pizza-option'>X-LARGE 20in</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='startOrder()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSauce()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row'> <!-- <div class='col-l-12' id='pizza-display'></div> --> <canvas id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
-
-HTML_ARRAY[3] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>SAUCE IT UP:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row'> <canvas class='col-l-12' id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
-HTML_ARRAY[4] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row'> <canvas id='pizzaDisplay'></canvas> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
+//sizes
+HTML_ARRAY[2] = " <div class='row'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row'> <div class='col-s-6 center' id='delivery'> <h1 class='center'>HOW HUNGRY ARE YOU?</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='sm' class='pizza-option'>SMALL 8in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='med' class='pizza-option'>MEDIUM 10in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='lg' class='pizza-option'>LARGE 14in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='xl' class='pizza-option'>X-LARGE 20in</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='startOrder()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSauce()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-s-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='m-auto' id='displayBox'> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div> </div>";
+//sauces
+HTML_ARRAY[3] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>SAUCE IT UP:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div>";
+//toppings
+HTML_ARRAY[4] = " <div class='row fit fadeIn'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit fadeIn'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> </div> </div>";
+//confirmation
 HTML_ARRAY[5] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <!-- <div id='custom' class='btn'>More Pizza, Big Daddy!</div> <div id='home' class='btn'>Nah, I'm straight.</div> --> </div> </div>";
+//load animation
+HTML_ARRAY[6] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <img id='loaderLogo' src='images/pizza/prebuilt-pepperoni.png'/> <h1 id='loaderText' class='center' data-text='LOADING TOPPINGS...'>LOADING TOPPINGS...</h1> </div> </div>";
 var pizzaDiv = document.getElementById('pizza');
 var totalText = document.getElementById('total');
 
@@ -424,21 +431,39 @@ function drawPizza(){
 }
 
 ///end
+function validateLocation(){
+    console.log("VALIDATING");
+    var str = document.getElementById('streetBox').value;
+    var city = document.getElementById('cityBox').value;
+    var st = document.getElementById('stateBox').value;    
+    var zip = document.getElementById('zipBox').value;
+    var zip2 = document.getElementById('zipBox2').value;
+    if((str != "" && city != "" && st != "" && zip != "") || zip2 != ""){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 function startOrder(){
     console.log("START ORDER");
-    pizzaDiv.innerHTML = HTML_ARRAY[1];
-    refresh();
-    customPizzaBtn = document.getElementById('pizza-custom');
-    pizzaDisplay = document.getElementById('pizza-display');
-    pizzaDesc = document.getElementById('pizza-description');
-    totalText  = document.getElementById('total');
-    cheesePizzaBtn = document.getElementById('pizza-cheese');
-    pepperoniPizzaBtn = document.getElementById('pizza-pepperoni');
-    meatPizzaBtn = document.getElementById('pizza-meat');
-    hawaiianPizzaBtn = document.getElementById('pizza-hawaiian');
-    alfredoPizzaBtn = document.getElementById('pizza-alfredo');
+    if(validateLocation()){
+        pizzaDiv.innerHTML = HTML_ARRAY[1];
+        refresh();
+        customPizzaBtn = document.getElementById('pizza-custom');
+        pizzaDisplay = document.getElementById('pizza-display');
+        pizzaDesc = document.getElementById('pizza-description');
+        totalText  = document.getElementById('total');
+        cheesePizzaBtn = document.getElementById('pizza-cheese');
+        pepperoniPizzaBtn = document.getElementById('pizza-pepperoni');
+        meatPizzaBtn = document.getElementById('pizza-meat');
+        hawaiianPizzaBtn = document.getElementById('pizza-hawaiian');
+        alfredoPizzaBtn = document.getElementById('pizza-alfredo');
+    }
+    else{
+        alert("One or more fields are empty. Please try again.");
+    }
 
-    console.log("BTN", customPizzaBtn);
 }
 function loadApp(){
     pizzaDiv.innerHTML = HTML_ARRAY[0];
@@ -469,37 +494,40 @@ function loadSauce(){
     if(pizzaType !== 'custom'){
         pizzaDiv.innerHTML = HTML_ARRAY[5];
     }else{
-        pizzaDiv.innerHTML = HTML_ARRAY[3];
+            pizzaDiv.innerHTML = HTML_ARRAY[3];
+            canvas = document.getElementById('pizzaDisplay');
+            ctx = canvas.getContext('2d');
+            width = canvas.width;
+            height = canvas.height;
+            priceDtls = document.getElementById('price');
+            sizeDtls = document.getElementById('sizeDtls');
+            marinaraBtn = document.getElementById('sauce-marinara');
+            bbqBtn = document.getElementById('sauce-bbq');
+            alfredoBtn = document.getElementById('sauce-alfredo');
+            setPizzaSize();
+    }
+    
+}
+
+function loadToppings(){
+    pizzaDiv.innerHTML = HTML_ARRAY[6];
+    setTimeout(function (){
+        pizzaDiv.innerHTML = HTML_ARRAY[4];
         canvas = document.getElementById('pizzaDisplay');
         ctx = canvas.getContext('2d');
         width = canvas.width;
         height = canvas.height;
         priceDtls = document.getElementById('price');
         sizeDtls = document.getElementById('sizeDtls');
-        marinaraBtn = document.getElementById('sauce-marinara');
-        bbqBtn = document.getElementById('sauce-bbq');
-        alfredoBtn = document.getElementById('sauce-alfredo');
+        toppings = document.getElementById('toppingsDtls');
+        checkout = document.getElementById('checkout');
+        full_l_r_top = document.getElementsByClassName('full_l_r_top');
+        reg_extra_top = document.getElementsByClassName('reg_extra_top');
+        table = document.getElementById('tableContainer');
+        buttonNames.forEach(buildTopping);
+        checkout.addEventListener('click', toCheckout);
         setPizzaSize();
-    }
-    
-}
-
-function loadToppings(){
-    pizzaDiv.innerHTML = HTML_ARRAY[4];
-    canvas = document.getElementById('pizzaDisplay');
-    ctx = canvas.getContext('2d');
-    width = canvas.width;
-    height = canvas.height;
-    priceDtls = document.getElementById('price');
-    sizeDtls = document.getElementById('sizeDtls');
-    toppings = document.getElementById('toppingsDtls');
-    checkout = document.getElementById('checkout');
-    full_l_r_top = document.getElementsByClassName('full_l_r_top');
-    reg_extra_top = document.getElementsByClassName('reg_extra_top');
-    table = document.getElementById('tableContainer');
-    buttonNames.forEach(buildTopping);
-    checkout.addEventListener('click', toCheckout);
-    setPizzaSize();
+    },3000);
 }
 
 function refresh(){

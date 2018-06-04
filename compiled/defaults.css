@@ -130,6 +130,7 @@
   .col-l-6 {
     flex: 0 0 50%;
   }
+  
 }
 
 @media (min-width: 900px) {
