@@ -102,13 +102,15 @@ function buildTopping(item, index, arr){
     //Create table row and heading for button
     var row = document.createElement('tr');
     var heading = document.createElement('th');
-    heading.textContent = item.charAt(0).toUpperCase() + item.substring(1);
+    var p = document.createElement('p');
+    p.textContent = item.charAt(0).toUpperCase() + item.substring(1);
     //Create topping button
     buttons[index] = document.createElement('input');
     buttons[index].id = item;
     buttons[index].type = 'checkbox';
     //Append button to table
     heading.appendChild(buttons[index]);
+    heading.appendChild(p);
     row.appendChild(heading);
     table.appendChild(row);
     //Add event listener to button
