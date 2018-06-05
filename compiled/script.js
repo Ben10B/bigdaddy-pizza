@@ -4,15 +4,15 @@ HTML_ARRAY[0] = "<div class='row fit'> <img src='images/slice-logo3.png' class='
 //choose
 HTML_ARRAY[1] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>PICK A PIZZA TO CUSTOMIZE:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`custom`, this)' id='pizza-custom' class='pizza-option'>CUSTOM</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`cheese`, this)' id='pizza-cheese' class='pizza-option'>CHEESE</h2></div> </div> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`pepperoni`, this)' id='pizza-pepperoni' class='pizza-option'>PEPPERONI</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`meat`, this)' id='pizza-meat' class='pizza-option'>MEAT-MANIA</h2></div> </div> <div class='row'> <div class='col-l-6 center'><h2 onclick='setPizzaType(`hawaiian`, this)' id='pizza-hawaiian'class='pizza-option'>HAWAIIAN</h2></div> <div class='col-l-6 center'><h2 onclick='setPizzaType(`alfredo`, this)' id='pizza-alfredo' class='pizza-option'>ALFREDO</h2></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='prevPage()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSizes()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='total'>TOTAL: $0</h1> <div class='row'> <div class='col-l-12' id='pizza-display'></div> </div> <div class='row'> <div class='col-l-12 prebuilt-text'><p id='pizza-description'></p></div> </div> </div> </div>";
 //sizes
-HTML_ARRAY[2] = " <div class='row'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row'> <div class='col-s-6 center' id='delivery'> <h1 class='center'>HOW HUNGRY ARE YOU?</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='sm' class='pizza-option'>SMALL 8in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='med' class='pizza-option'>MEDIUM 10in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='lg' class='pizza-option'>LARGE 14in</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='xl' class='pizza-option'>X-LARGE 20in</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='startOrder()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSauce()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-s-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='m-auto' id='displayBox'> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div> </div>";
+HTML_ARRAY[2] = "<div class='row'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row'> <div class='col-s-6 center' id='delivery'> <h1 class='center'>HOW HUNGRY ARE YOU?</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='sm' class='pizza-option'>SMALL 8&quot;</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='med' class='pizza-option'>MEDIUM 10&quot;</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='lg' class='pizza-option'>LARGE 14&quot;</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 id='xl' class='pizza-option'>X-LARGE 20&quot;</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <!-- <div class='col-l-6' onclick='startOrder()'><i class='fa fa-arrow-left'></i></div> --> <div class='col-l-12' onclick='loadSauce()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-s-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='m-auto' id='displayBox'> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div> </div>";
 //sauces
 HTML_ARRAY[3] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>SAUCE IT UP:</h1> <div class='m-auto' id='pizzaOptionsBox'> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`marinara`, this)' id='sauce-marinara' class='pizza-option'>MARINARA</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`bbq`, this)' id='sauce-bbq' class='pizza-option'>BBQ</h2></div> <div class='col-l-3'></div> </div> <div class='row'> <div class='col-l-3'></div> <div class='col-l-6 center'><h2 onclick='setPizzaSauce(`alfredo`, this)' id='sauce-alfredo' class='pizza-option'>ALFREDO</h2></div> <div class='col-l-3'></div> </div> <div class='row arrows'> <div class='col-l-12' onclick='loadToppings()'><i class='fa fa-arrow-right'></i></div> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> </div> </div> </div> </div>";
 //toppings
-HTML_ARRAY[4] = " <div class='row fit fadeIn'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit fadeIn'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>Add to Order</div> </div> </div> </div> </div>";
+HTML_ARRAY[4] = " <div class='row fit fadeIn'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit fadeIn'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>TOP IT UP:</h1> <div class='tooltip'>SPECIAL DEAL! <span class='tooltiptext'>5 Toppings = $3.00</span> </div> <div class='m-auto' id='pizzaOptionsBox'> <div class='col-l-6 center'> <table id='tableContainer'></table> </div> </div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0.00</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> <div class='row'> <div class='col-l-12' id='details'> <h3>ORDER DETAILS</h3> <ul> <li id='sizeDtls'>SIZE:</li> <li id='toppingsDtls'>TOPPINGS:</li> </ul> <div class='button' id='checkout'>ADD TO ORDER</div> </div> </div> </div> </div>";
 //review
 HTML_ARRAY[5] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-6 center' id='delivery'> <h1 class='center'>REVIEW ORDER:</h1> <div class='center' id='review'> </div> <div class='button' id='placeOrder'>PLACE ORDER</div> </div> <div class='col-l-6 center' id='carryout'> <h1 class='center' id='price'>TOTAL: $0</h1> <div class='row pizzaRow'> <div class='col-l-12'> <canvas id='pizzaDisplay'></canvas> </div> </div> </div> </div>";
 //confirmation
-HTML_ARRAY[6] = "<div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <canvas id='pizzaDisplay'></canvas> </div> </div>";
+HTML_ARRAY[6] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row thanks'> <div class='col-l-12 center' id='delivery'> <h1 class='center'>THANK YOU!</h1> <h1 class='center'>Your order has been placed!</h1> <h1 class='center'>You should receive an email confirmation shortly.</h1> <canvas id='pizzaDisplay'></canvas> </div> </div>";
 //load animation
 HTML_ARRAY[7] = " <div class='row fit'> <img src='images/slice-logo3.png' class='brand-logo'/> </div> <div class='row fit'> <div class='col-l-12 center' id='delivery'> <img id='loaderLogo' src='images/pizza/prebuilt-pepperoni.png'/> <h1 id='loaderText' class='center' data-text='LOADING TOPPINGS...'>LOADING TOPPINGS...</h1> </div> </div>";
 var pizzaDiv = document.getElementById('pizza');
@@ -74,18 +74,46 @@ function displaySizeClick(evt){
         pizzaSizeCost = 2.00;
         bgSize = 160;
         str = 'Small 8"';
+        if(!(evt.srcElement.classList.contains('selected-pizza'))){
+            evt.srcElement.classList.add('selected-pizza');
+            med.classList.remove('selected-pizza');
+            lg.classList.remove('selected-pizza');
+            xl.classList.remove('selected-pizza');     
+        }
+
     }else if(evt.srcElement.id === "med"){
         pizzaSizeCost = 3.00;
         bgSize = 175;
         str = 'Medium 10"';
+        if(!(evt.srcElement.classList.contains('selected-pizza'))){
+            evt.srcElement.classList.add('selected-pizza');
+            sm.classList.remove('selected-pizza');
+            lg.classList.remove('selected-pizza');
+            xl.classList.remove('selected-pizza');     
+        }
+
     }else if(evt.srcElement.id === "lg"){
         pizzaSizeCost = 4.00;
         bgSize = 200;
         str = 'Large 14"';
+        if(!(evt.srcElement.classList.contains('selected-pizza'))){
+            evt.srcElement.classList.add('selected-pizza');
+            med.classList.remove('selected-pizza');
+            xl.classList.remove('selected-pizza');
+            sm.classList.remove('selected-pizza');     
+        }
+
     }else if(evt.srcElement.id === "xl"){
         pizzaSizeCost = 5.00;
         bgSize = 210;
         str = 'X-Large 20"';
+        if(!(evt.srcElement.classList.contains('selected-pizza'))){
+            evt.srcElement.classList.add('selected-pizza');
+            med.classList.remove('selected-pizza');
+            lg.classList.remove('selected-pizza');
+            sm.classList.remove('selected-pizza');     
+        }
+
     }
     sizeDtls.innerHTML = 'SIZE: '+str;
     var toppingStr = "";
@@ -534,7 +562,7 @@ function loadToppings(){
         buttonNames.forEach(buildTopping);
         checkout.addEventListener('click', toCheckout);
         setPizzaSize();
-    },3000);
+    },2000);
 }
 function loadReview(){
     review = document.getElementById('review');
@@ -565,7 +593,6 @@ function toFinalPage(evt){
 function refresh(){
     var content = pizza.innerHTML;
     pizza.innerHTML= content;
-    // console.log(content);
 }
 
 function getOrderTotal(){
@@ -697,97 +724,6 @@ function resetPizzaBtns(type){
         hawaiianPizzaBtn.classList.remove('selected-pizza');
     }
 }
-
-// function setPizzaSize(size){
-//     if(size == "s"){
-//         pizzaSize = size;
-//         resetPizzaSizeBtns(pizzaSize);
-//         if(smallBtn.classList.contains('selected-pizza')){
-//             console.log("CONTAINS DONT READ")
-//         }
-//         else{
-//             pizzaSizeCost = -2;
-//             updateTotal();
-//             console.log("NOT CLICKED YET");
-//             smallBtn.classList.add('selected-pizza');
-//         }
-//     }
-//     if(size == "m"){
-//         pizzaSize = size;
-//         resetPizzaSizeBtns(pizzaSize);
-//         if(medBtn.classList.contains('selected-pizza')){
-//             console.log("CONTAINS DONT READ")
-//         }
-//         else{
-//             pizzaSizeCost = 0;
-//             updateTotal();
-//             console.log("NOT CLICKED YET");
-//             medBtn.classList.add('selected-pizza');
-//         }
-
-//     }
-//     if(size == "l"){
-//         pizzaSize = size;
-//         resetPizzaSizeBtns(pizzaSize);
-//         if(largeBtn.classList.contains('selected-pizza')){
-//             console.log("CONTAINS DONT READ")
-//         }
-//         else{
-//             pizzaSizeCost = 3;
-//             updateTotal();
-//             console.log("NOT CLICKED YET");
-//             largeBtn.classList.add('selected-pizza');
-//         }
-
-//     }
-//     if(size == "xl"){
-//         pizzaSize = size;
-//         resetPizzaSizeBtns(pizzaSize);
-//         if(xlargeBtn.classList.contains('selected-pizza')){
-//             console.log("CONTAINS DONT READ")
-//         }
-//         else{
-//             pizzaSizeCost = 5;
-//             console.log(orderTotal);
-//             updateTotal();
-//             console.log("NOT CLICKED YET");
-//             xlargeBtn.classList.add('selected-pizza');
-//         }
-//     }
-//     console.log(pizzaSize);
-// }
-
-// function resetPizzaSizeBtns(size){
-//     if(size == "s"){
-//         medBtn.classList.remove('selected-pizza');
-//         largeBtn.classList.remove('selected-pizza');
-//         xlargeBtn.classList.remove('selected-pizza');
-//         updateTotal();
-
-
-//     }
-//     if(size == "m"){
-//         smallBtn.classList.remove('selected-pizza');
-//         largeBtn.classList.remove('selected-pizza');
-//         xlargeBtn.classList.remove('selected-pizza');
-//         updateTotal();
-
-
-//     }
-//     if(size == "l"){
-//         smallBtn.classList.remove('selected-pizza');
-//         medBtn.classList.remove('selected-pizza');
-//         xlargeBtn.classList.remove('selected-pizza');
-//         updateTotal();
-
-//     }
-//     if(size == "xl"){
-//         smallBtn.classList.remove('selected-pizza');
-//         medBtn.classList.remove('selected-pizza');
-//         largeBtn.classList.remove('selected-pizza');
-//         updateTotal();
-//     }
-// }
 
 function setPizzaSauce(sauce){
     document.getElementsByClassName('fa-arrow-right')[0].style.visibility = "visible";

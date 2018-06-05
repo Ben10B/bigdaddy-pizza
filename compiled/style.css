@@ -149,8 +149,9 @@ color:rgb(202, 55, 44);
     color: #Ec6c64;
     font-size:20px;
     border:1px solid #Ec6c64;
-    width:50%;
+    width:30%;
     margin: auto;
+    margin-bottom:20px;
 }
 
 .tooltip .tooltiptext {
@@ -225,7 +226,7 @@ option{
 #loaderText:before{
     content: attr(data-text);
     color:#Ec6c64;
-    animation: loadText 3s linear;
+    animation: loadText 2s linear;
     position: absolute;
     overflow: hidden;
     max-width: 10em;
@@ -251,4 +252,16 @@ option{
     #carryout{
         border-left:none;
     }
+}
+
+.reviewDetail{
+    color:#Ec6c64;
+}
+
+li#toppingDtls{
+    padding:10px;
+}
+
+.thanks{
+    height:500px;
 }
